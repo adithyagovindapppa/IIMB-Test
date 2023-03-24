@@ -6,13 +6,7 @@
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="game_id" elementType="Argument">
-            <stringProp name="Argument.name">game_id</stringProp>
-            <stringProp name="Argument.value">685</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
+        <collectionProp name="Arguments.arguments"/>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
@@ -164,50 +158,37 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CreateGame" enabled="false">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CreateGame" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\common\Downloads\IIMB-CEGame-Test\players_dev.csv" elementType="HTTPFileArg">
+                <stringProp name="File.mimetype">text/csv</stringProp>
+                <stringProp name="File.path">C:\Users\common\Downloads\IIMB-CEGame-Test\players_dev.csv</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
+              <elementProp name="Args" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">----------------------------896369439746136216468441&#xd;
-Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
-&#xd;
-{&quot;UserId&quot;:&quot;1092&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;test6666&quot;,&quot;Venue&quot;:&quot;college&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;${__time(yyyy-MM-dd)}&quot;,&quot;StartTime&quot;:&quot;${__time(HH:mm,)}&quot;,&quot;EndTime&quot;:&quot;21:04&quot;,&quot;CompaniesCount&quot;:2,&quot;ShareBrief&quot;:false,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;16&quot;},{&quot;id&quot;:&quot;19&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}&#xd;
-&#xd;
-----------------------------896369439746136216468441&#xd;
-Content-Disposition: form-data; name=&quot;file&quot;; filename=&quot;players.csv&quot;&#xd;
-Content-Type: text/csv&#xd;
-&#xd;
-tester1,vinay.aj+2111111@appzui.com&#xd;
-tester2,tester2@appzui.com&#xd;
-tester3,vinay.aj+3111113@appzui.com&#xd;
-tester4,tester4@gmail.com&#xd;
-tester5,tester5@gmail.com&#xd;
-tester6,tester6@gmail.com&#xd;
-tester7,tester7@gmail.com&#xd;
-tester8,tester8@gmail.com&#xd;
-tester9,tester9@gmail.com&#xd;
-tester10,tester10@gmail.com&#xd;
-tester11,tester11@gmail.com&#xd;
-tester12,tester12@gmail.com&#xd;
-&#xd;
-----------------------------896369439746136216468441--&#xd;
-</stringProp>
+                <stringProp name="Argument.value">{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;test&quot;,&quot;Venue&quot;:&quot;test&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-03-24&quot;,&quot;StartTime&quot;:&quot;15:30&quot;,&quot;EndTime&quot;:&quot;17:45&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">Args</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">ceware/ManageGameCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           <stringProp name="HTTPSampler.connect_timeout"></stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
@@ -221,38 +202,26 @@ tester12,tester12@gmail.com&#xd;
               </elementProp>
               <elementProp name="Authorization" elementType="Header">
                 <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">32df2c08-eb7e-440a-b4b2-cd712b0f037a</stringProp>
-              </elementProp>
-              <elementProp name="User-Agent" elementType="Header">
-                <stringProp name="Header.name">User-Agent</stringProp>
-                <stringProp name="Header.value">PostmanRuntime/7.26.8</stringProp>
-              </elementProp>
-              <elementProp name="Postman-Token" elementType="Header">
-                <stringProp name="Header.name">Postman-Token</stringProp>
-                <stringProp name="Header.value">f9f888a1-8083-4a9e-9d79-c4efa8dea053</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegamedev.iimb.ac.in</stringProp>
-              </elementProp>
-              <elementProp name="Accept-Encoding" elementType="Header">
-                <stringProp name="Header.name">Accept-Encoding</stringProp>
-                <stringProp name="Header.value">gzip, deflate, br</stringProp>
-              </elementProp>
-              <elementProp name="Connection" elementType="Header">
-                <stringProp name="Header.name">Connection</stringProp>
-                <stringProp name="Header.value">keep-alive</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------896369439746136216468441</stringProp>
-              </elementProp>
-              <elementProp name="Content-Length" elementType="Header">
-                <stringProp name="Header.name">Content-Length</stringProp>
-                <stringProp name="Header.value">1004</stringProp>
+                <stringProp name="Header.value">${__property(token)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">game_id_regex</stringProp>
+            <stringProp name="RegexExtractor.regex">GameId\\&quot;:(.+?),</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default"></stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+            <stringProp name="BeanShellAssertion.query">${__setProperty(game_id, ${game_id_regex})};</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
           <hashTree/>
           <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
             <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -989,7 +958,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------666812362689861936368459&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}&#xd;
 ----------------------------666812362689861936368459--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -1121,7 +1090,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------720630630802166437517539&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}&#xd;
 ----------------------------720630630802166437517539--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -1253,7 +1222,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------606680282946057984724242&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}&#xd;
 ----------------------------606680282946057984724242--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -1406,7 +1375,7 @@ ${__setProperty(GameCompanyEntityId_subsi, ${GameCompanyEntityId_subsi})};</stri
                 <stringProp name="Argument.value">----------------------------363661026405367029339224&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;UserId&quot;:&quot;1092&quot;,&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;Name&quot;:&quot;testDemo${__property(instructor_id)}&quot;,&quot;Venue&quot;:&quot;college&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;${__time(yyyy-MM-dd)}&quot;,&quot;StartTime&quot;:&quot;${__time(HH:mm,)}&quot;,&quot;EndTime&quot;:&quot;21:05&quot;,&quot;CompaniesCount&quot;:2,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;16&quot;,&quot;NoOfInstances&quot;:1},{&quot;id&quot;:&quot;19&quot;,&quot;NoOfInstances&quot;:1}],&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Scheduled&quot;,&quot;ShareBrief&quot;:false,&quot;isNewPlayersList&quot;:false}&#xd;
+{&quot;UserId&quot;:&quot;1092&quot;,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;Name&quot;:&quot;testDemo${__property(instructor_id)}&quot;,&quot;Venue&quot;:&quot;college&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;${__time(yyyy-MM-dd)}&quot;,&quot;StartTime&quot;:&quot;${__time(HH:mm,)}&quot;,&quot;EndTime&quot;:&quot;21:05&quot;,&quot;CompaniesCount&quot;:2,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;16&quot;,&quot;NoOfInstances&quot;:1},{&quot;id&quot;:&quot;19&quot;,&quot;NoOfInstances&quot;:1}],&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Scheduled&quot;,&quot;ShareBrief&quot;:false,&quot;isNewPlayersList&quot;:false}&#xd;
 ----------------------------363661026405367029339224&#xd;
 Content-Disposition: form-data; name=&quot;file&quot;; filename=&quot;players.csv&quot;&#xd;
 Content-Type: text/csv&#xd;
@@ -1553,7 +1522,7 @@ tester12,tester12@gmail.com&#xd;
                 <stringProp name="Argument.value">----------------------------128966392675812882445389&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;PlayerId&quot;:${__property(player_id)}}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;PlayerId&quot;:${__property(player_id)}}&#xd;
 ----------------------------128966392675812882445389--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -1685,7 +1654,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------588777060281045535796171&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;GameCompanyId&quot;:&quot;744&quot;,&quot;GameCompanyEntityId&quot;:&quot;3707&quot;,&quot;PlayerId&quot;:&quot;${__property(player_id)}&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;GameCompanyId&quot;:&quot;744&quot;,&quot;GameCompanyEntityId&quot;:&quot;3707&quot;,&quot;PlayerId&quot;:&quot;${__property(player_id)}&quot;}&#xd;
 ----------------------------588777060281045535796171--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -1817,7 +1786,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------333448233750199315579128&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;PlayerId&quot;:${__property(player_id)}}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;PlayerId&quot;:${__property(player_id)}}&#xd;
 ----------------------------333448233750199315579128--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2081,7 +2050,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------941553189025835433556382&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period1Started&quot;,&quot;StartedAt&quot;:1610877772946}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period1Started&quot;,&quot;StartedAt&quot;:1610877772946}&#xd;
 ----------------------------941553189025835433556382--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2213,7 +2182,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------707937867174522495088606&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;User&quot;:{&quot;PrimaryEmail&quot;:&quot;${__property(HQ_email)}&quot;,&quot;Password&quot;:&quot;123456&quot;,&quot;Context&quot;:&quot;User&quot;,&quot;Player&quot;:{&quot;GameId&quot;:&quot;${game_id}&quot;}},&quot;Org&quot;:{&quot;OrgId&quot;:1}}&#xd;
+{&quot;User&quot;:{&quot;PrimaryEmail&quot;:&quot;${__property(HQ_email)}&quot;,&quot;Password&quot;:&quot;123456&quot;,&quot;Context&quot;:&quot;User&quot;,&quot;Player&quot;:{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}},&quot;Org&quot;:{&quot;OrgId&quot;:1}}&#xd;
 ----------------------------707937867174522495088606--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2445,7 +2414,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------707937867174522495088606&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;User&quot;:{&quot;PrimaryEmail&quot;:&quot;${__property(subsi_email)}&quot;,&quot;Password&quot;:&quot;123456&quot;,&quot;Context&quot;:&quot;User&quot;,&quot;Player&quot;:{&quot;GameId&quot;:&quot;${game_id}&quot;}},&quot;Org&quot;:{&quot;OrgId&quot;:1}}&#xd;
+{&quot;User&quot;:{&quot;PrimaryEmail&quot;:&quot;${__property(subsi_email)}&quot;,&quot;Password&quot;:&quot;123456&quot;,&quot;Context&quot;:&quot;User&quot;,&quot;Player&quot;:{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}},&quot;Org&quot;:{&quot;OrgId&quot;:1}}&#xd;
 ----------------------------707937867174522495088606--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2677,7 +2646,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------359033231100849419779888&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:${game_id},&quot;GameCompanyId&quot;:944}&#xd;
+{&quot;GameId&quot;:${__property(game_id)},&quot;GameCompanyId&quot;:944}&#xd;
 ----------------------------359033231100849419779888--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2799,7 +2768,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------846318238214898823356926&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:${game_id},&quot;GameCompanyId&quot;:822}&#xd;
+{&quot;GameId&quot;:${__property(game_id)},&quot;GameCompanyId&quot;:822}&#xd;
 ----------------------------846318238214898823356926--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2887,7 +2856,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------850137691678216096862803&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:0,&quot;ProjectId&quot;:99,&quot;Fund&quot;:10,&quot;COType&quot;:&quot;LowCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0,&quot;HqPitchQuality&quot;:&quot;BadPQ&quot;,&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId)}&quot;,&quot;GameCompanyEntityId&quot;:${__property(GameCompanyEntityId_subsi)}}]}&#xd;
+{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:0,&quot;ProjectId&quot;:99,&quot;Fund&quot;:10,&quot;COType&quot;:&quot;LowCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0,&quot;HqPitchQuality&quot;:&quot;BadPQ&quot;,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId)}&quot;,&quot;GameCompanyEntityId&quot;:${__property(GameCompanyEntityId_subsi)}}]}&#xd;
 ----------------------------850137691678216096862803--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3022,7 +2991,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------821082727487359952438710&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:0,&quot;ProjectId&quot;:99,&quot;Fund&quot;:12,&quot;COType&quot;:&quot;LowCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0,&quot;HqPitchQuality&quot;:&quot;AveragePQ&quot;,&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;GameCompanyId&quot;:&quot;940&quot;,&quot;GameCompanyEntityId&quot;:4688}]}&#xd;
+{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:0,&quot;ProjectId&quot;:99,&quot;Fund&quot;:12,&quot;COType&quot;:&quot;LowCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0,&quot;HqPitchQuality&quot;:&quot;AveragePQ&quot;,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;GameCompanyId&quot;:&quot;940&quot;,&quot;GameCompanyEntityId&quot;:4688}]}&#xd;
 ----------------------------821082727487359952438710--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3110,7 +3079,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------370617152031382132915422&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:${game_id},&quot;GameCompanyId&quot;:944,&quot;PlayerId&quot;:14392}&#xd;
+{&quot;GameId&quot;:${__property(game_id)},&quot;GameCompanyId&quot;:944,&quot;PlayerId&quot;:14392}&#xd;
 ----------------------------370617152031382132915422--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3210,7 +3179,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------931541700543103278062545&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;SubsiProjectsData&quot;:[{&quot;SubsiProjectId&quot;:0,&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId_subsi)}&quot;,&quot;GameCompanyEntityId&quot;:&quot;${__property(GameCompanyEntityId_subsi)}&quot;,&quot;ProjectId&quot;:99,&quot;Context&quot;:&quot;Pitched&quot;,&quot;COType&quot;:&quot;HighCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0}]}&#xd;
+{&quot;SubsiProjectsData&quot;:[{&quot;SubsiProjectId&quot;:0,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId_subsi)}&quot;,&quot;GameCompanyEntityId&quot;:&quot;${__property(GameCompanyEntityId_subsi)}&quot;,&quot;ProjectId&quot;:99,&quot;Context&quot;:&quot;Pitched&quot;,&quot;COType&quot;:&quot;HighCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0}]}&#xd;
 &#xd;
 ----------------------------931541700543103278062545--&#xd;
 </stringProp>
@@ -3311,7 +3280,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------389873955725537914488038&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period1Ended&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period1Ended&quot;}&#xd;
 ----------------------------389873955725537914488038--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3406,7 +3375,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------681585441957424129285574&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period2Started&quot;,&quot;Period2StartedAt&quot;:1609940485104}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period2Started&quot;,&quot;Period2StartedAt&quot;:1609940485104}&#xd;
 ----------------------------681585441957424129285574--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3506,7 +3475,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------923871887039645192346175&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:${__property(HqProjectId)},&quot;HqFutureActionType&quot;:&quot;Incubate&quot;,&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId)}&quot;,&quot;GameCompanyEntityId&quot;:${__property(GameCompanyEntityId)},&quot;Edited&quot;:true}]}&#xd;
+{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:${__property(HqProjectId)},&quot;HqFutureActionType&quot;:&quot;Incubate&quot;,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId)}&quot;,&quot;GameCompanyEntityId&quot;:${__property(GameCompanyEntityId)},&quot;Edited&quot;:true}]}&#xd;
 ----------------------------923871887039645192346175--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3606,7 +3575,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------812105107725091134260311&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:${__property(HqProjectId)},&quot;SubsiFutureActionType&quot;:&quot;Incubate&quot;,&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId_subsi)}&quot;,&quot;GameCompanyEntityId&quot;:&quot;${__property(GameCompanyEntityId_subsi)}&quot;,&quot;Edited&quot;:true}]}&#xd;
+{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:${__property(HqProjectId)},&quot;SubsiFutureActionType&quot;:&quot;Incubate&quot;,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId_subsi)}&quot;,&quot;GameCompanyEntityId&quot;:&quot;${__property(GameCompanyEntityId_subsi)}&quot;,&quot;Edited&quot;:true}]}&#xd;
 ----------------------------812105107725091134260311--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3706,7 +3675,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------433059358275175027867597&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period2Ended&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period2Ended&quot;}&#xd;
 ----------------------------433059358275175027867597--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3806,7 +3775,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------537939776625812609433418&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
- {&quot;GameId&quot;:&quot;${game_id}&quot;}&#xd;
+ {&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}&#xd;
 ----------------------------537939776625812609433418--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3906,7 +3875,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------605710991656940391407264&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}&#xd;
 ----------------------------605710991656940391407264--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -4006,7 +3975,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------141432454263895521215941&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;isDeleted&quot;:&quot;true&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;isDeleted&quot;:&quot;true&quot;}&#xd;
 ----------------------------141432454263895521215941--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -4262,7 +4231,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">iimb_api_result_PROD_Feb_27.csv</stringProp>
+        <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
