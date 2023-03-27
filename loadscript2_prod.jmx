@@ -10,7 +10,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="token" elementType="Argument">
             <stringProp name="Argument.name">token</stringProp>
-            <stringProp name="Argument.value">4a726d3d-fad9-47dc-b88d-3eec13d7e533</stringProp>
+            <stringProp name="Argument.value">47985ff7-f2ec-4c83-8d5d-4ce44484efae 47985ff7-f2ec-4c83-8d5d-4ce44484efae 47985ff7-f2ec-4c83-8d5d-4ce44484efae 47985ff7-f2ec-4c83-8d5d-4ce44484efae 47985ff7-f2ec-4c83-8d5d-4ce44484efae 47985ff7-f2ec-4c83-8d5d-4ce44484efae 47985ff7-f2ec-4c83-8d5d-4ce44484efae 47985ff7-f2ec-4c83-8d5d-4ce44484efae 47985ff7-f2ec-4c83-8d5d-4ce44484efae 47985ff7-f2ec-4c83-8d5d-4ce44484efae 47985ff7-f2ec-4c83-8d5d-4ce44484efae 47985ff7-f2ec-4c83-8d5d-4ce44484efae </stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="hq_email" elementType="Argument">
@@ -173,7 +173,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">------WebKitFormBoundaryLdAjupqLfZOGrMfB&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;load test 96 t6&quot;,&quot;Venue&quot;:&quot;load test 96 t6&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-03-27&quot;,&quot;StartTime&quot;:&quot;16:35&quot;,&quot;EndTime&quot;:&quot;18:30&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}&#xd;
+{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;load test 96 t6&quot;,&quot;Venue&quot;:&quot;load test 96 t6&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-03-10&quot;,&quot;StartTime&quot;:&quot;19:45&quot;,&quot;EndTime&quot;:&quot;21:45&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}&#xd;
 ------WebKitFormBoundaryLdAjupqLfZOGrMfB--</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -355,9 +355,9 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CreateGame" enabled="true">
           <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
             <collectionProp name="HTTPFileArgs.files">
-              <elementProp name="C:\Users\Administrator\Documents\IIMB\players2.csv" elementType="HTTPFileArg">
+              <elementProp name="C:\Users\common\Downloads\IIMB-CEGame-Test\players2.csv" elementType="HTTPFileArg">
                 <stringProp name="File.mimetype">text/csv</stringProp>
-                <stringProp name="File.path">C:\Users\Administrator\Documents\IIMB\players2.csv</stringProp>
+                <stringProp name="File.path">C:\Users\common\Downloads\IIMB-CEGame-Test\players2.csv</stringProp>
                 <stringProp name="File.paramname">file</stringProp>
               </elementProp>
             </collectionProp>
@@ -366,7 +366,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
             <collectionProp name="Arguments.arguments">
               <elementProp name="Args" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;load test 96 auto t1&quot;,&quot;Venue&quot;:&quot;load test 96 t5&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-03-15&quot;,&quot;StartTime&quot;:&quot;11:25&quot;,&quot;EndTime&quot;:&quot;12:25&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}</stringProp>
+                <stringProp name="Argument.value">{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;load test 96 auto t1&quot;,&quot;Venue&quot;:&quot;load test 96 t5&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-03-27&quot;,&quot;StartTime&quot;:&quot;16:49&quot;,&quot;EndTime&quot;:&quot;18:25&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">Args</stringProp>

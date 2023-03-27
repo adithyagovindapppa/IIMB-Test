@@ -9,7 +9,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="game_id" elementType="Argument">
             <stringProp name="Argument.name">game_id</stringProp>
-            <stringProp name="Argument.value">695</stringProp>
+            <stringProp name="Argument.value">738</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
