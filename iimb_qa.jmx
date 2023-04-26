@@ -6,13 +6,7 @@
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
-        <collectionProp name="Arguments.arguments">
-          <elementProp name="game_id" elementType="Argument">
-            <stringProp name="Argument.name">game_id</stringProp>
-            <stringProp name="Argument.value">738</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-        </collectionProp>
+        <collectionProp name="Arguments.arguments"/>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
@@ -21,7 +15,7 @@
         <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments"/>
         </elementProp>
-        <stringProp name="HTTPSampler.domain">10.11.70.163</stringProp>
+        <stringProp name="HTTPSampler.domain">cegameqa.iimb.ac.in</stringProp>
         <stringProp name="HTTPSampler.port"></stringProp>
         <stringProp name="HTTPSampler.protocol">https</stringProp>
         <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -168,50 +162,37 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CreateGame" enabled="false">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CreateGame" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\common\Downloads\IIMB-CEGame-Test\game_Sheet1.csv" elementType="HTTPFileArg">
+                <stringProp name="File.mimetype">text/csv</stringProp>
+                <stringProp name="File.path">C:\Users\common\Downloads\IIMB-CEGame-Test\game_Sheet1.csv</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
+              <elementProp name="Args" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">----------------------------896369439746136216468441&#xd;
-Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
-&#xd;
-{&quot;UserId&quot;:&quot;1092&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;test6666&quot;,&quot;Venue&quot;:&quot;college&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;${__time(yyyy-MM-dd)}&quot;,&quot;StartTime&quot;:&quot;${__time(HH:mm,)}&quot;,&quot;EndTime&quot;:&quot;21:04&quot;,&quot;CompaniesCount&quot;:2,&quot;ShareBrief&quot;:false,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;16&quot;},{&quot;id&quot;:&quot;19&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}&#xd;
-&#xd;
-----------------------------896369439746136216468441&#xd;
-Content-Disposition: form-data; name=&quot;file&quot;; filename=&quot;players.csv&quot;&#xd;
-Content-Type: text/csv&#xd;
-&#xd;
-tester1,vinay.aj+2111111@appzui.com&#xd;
-tester2,tester2@appzui.com&#xd;
-tester3,vinay.aj+3111113@appzui.com&#xd;
-tester4,tester4@gmail.com&#xd;
-tester5,tester5@gmail.com&#xd;
-tester6,tester6@gmail.com&#xd;
-tester7,tester7@gmail.com&#xd;
-tester8,tester8@gmail.com&#xd;
-tester9,tester9@gmail.com&#xd;
-tester10,tester10@gmail.com&#xd;
-tester11,tester11@gmail.com&#xd;
-tester12,tester12@gmail.com&#xd;
-&#xd;
-----------------------------896369439746136216468441--&#xd;
-</stringProp>
+                <stringProp name="Argument.value">{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;test&quot;,&quot;Venue&quot;:&quot;test&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-04-25&quot;,&quot;StartTime&quot;:&quot;12:50&quot;,&quot;EndTime&quot;:&quot;01:54&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">Args</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">ceware/ManageGameCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           <stringProp name="HTTPSampler.connect_timeout"></stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
@@ -227,36 +208,24 @@ tester12,tester12@gmail.com&#xd;
                 <stringProp name="Header.name">Authorization</stringProp>
                 <stringProp name="Header.value">${__property(token)}</stringProp>
               </elementProp>
-              <elementProp name="User-Agent" elementType="Header">
-                <stringProp name="Header.name">User-Agent</stringProp>
-                <stringProp name="Header.value">PostmanRuntime/7.26.8</stringProp>
-              </elementProp>
-              <elementProp name="Postman-Token" elementType="Header">
-                <stringProp name="Header.name">Postman-Token</stringProp>
-                <stringProp name="Header.value">f9f888a1-8083-4a9e-9d79-c4efa8dea053</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame-qa.iimb.ernet.in</stringProp>
-              </elementProp>
-              <elementProp name="Accept-Encoding" elementType="Header">
-                <stringProp name="Header.name">Accept-Encoding</stringProp>
-                <stringProp name="Header.value">gzip, deflate, br</stringProp>
-              </elementProp>
-              <elementProp name="Connection" elementType="Header">
-                <stringProp name="Header.name">Connection</stringProp>
-                <stringProp name="Header.value">keep-alive</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------896369439746136216468441</stringProp>
-              </elementProp>
-              <elementProp name="Content-Length" elementType="Header">
-                <stringProp name="Header.name">Content-Length</stringProp>
-                <stringProp name="Header.value">1004</stringProp>
-              </elementProp>
             </collectionProp>
           </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">game_id_regex</stringProp>
+            <stringProp name="RegexExtractor.regex">GameId\\&quot;:(.+?),</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default"></stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+            <stringProp name="BeanShellAssertion.query">${__setProperty(game_id, ${game_id_regex})};</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
           <hashTree/>
           <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
             <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -465,7 +434,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------363661026405367029339224&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;UserId&quot;:&quot;1966&quot;,&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;Name&quot;:&quot;editedgame&quot;,&quot;Venue&quot;:&quot;hassan&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;${__time(yyyy-MM-dd)}&quot;,&quot;StartTime&quot;:&quot;${__time(HH:mm,)}&quot;,&quot;EndTime&quot;:&quot;14:00&quot;,&quot;CompaniesCount&quot;:2,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;,&quot;NoOfInstances&quot;:1},{&quot;id&quot;:&quot;9&quot;,&quot;NoOfInstances&quot;:1}],&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Scheduled&quot;,&quot;ShareBrief&quot;:false,&quot;isNewPlayersList&quot;:false}&#xd;
+{&quot;UserId&quot;:&quot;1966&quot;,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;Name&quot;:&quot;editedgame&quot;,&quot;Venue&quot;:&quot;hassan&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;${__time(yyyy-MM-dd)}&quot;,&quot;StartTime&quot;:&quot;${__time(HH:mm,)}&quot;,&quot;EndTime&quot;:&quot;14:00&quot;,&quot;CompaniesCount&quot;:2,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;,&quot;NoOfInstances&quot;:1},{&quot;id&quot;:&quot;9&quot;,&quot;NoOfInstances&quot;:1}],&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Scheduled&quot;,&quot;ShareBrief&quot;:false,&quot;isNewPlayersList&quot;:false}&#xd;
 &#xd;
 ----------------------------363661026405367029339224&#xd;
 &#xd;
@@ -476,7 +445,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">cegameqa.iimb.ac.in</stringProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
@@ -509,10 +478,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Header.name">Postman-Token</stringProp>
                 <stringProp name="Header.value">f34453b3-e05f-4912-95c4-97181640836c</stringProp>
               </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
-              </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
                 <stringProp name="Header.value">gzip, deflate, br</stringProp>
@@ -528,6 +493,10 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               <elementProp name="Content-Length" elementType="Header">
                 <stringProp name="Header.name">Content-Length</stringProp>
                 <stringProp name="Header.value">1067</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -610,7 +579,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------363661026405367029339224&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;}&#xd;
+{&quot;GameId&quot;:&quot;$property{game_id}&quot;}&#xd;
 &#xd;
 ----------------------------363661026405367029339224&#xd;
 &#xd;
@@ -1421,7 +1390,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- createDesigner" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- createDesigner" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1444,7 +1413,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------641155615376264617555126&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;User&quot;:{&quot;PrimaryEmail&quot;:&quot;gameDesigner01@gmail.com&quot;,&quot;UserName&quot;:&quot;api designer&quot;,&quot;Context&quot;:&quot;License Holder&quot;},&quot;Org&quot;:{&quot;OrgId&quot;:1}}&#xd;
+{&quot;User&quot;:{&quot;PrimaryEmail&quot;:&quot;gameDesigner${__time()}@gmail.com&quot;,&quot;UserName&quot;:&quot;api designer&quot;,&quot;Context&quot;:&quot;License Holder&quot;},&quot;Org&quot;:{&quot;OrgId&quot;:1}}&#xd;
 ----------------------------641155615376264617555126--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -1486,7 +1455,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame-qa.iimb.ernet.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -1570,7 +1539,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- deleteDesigner" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- deleteDesigner" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1633,10 +1602,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Header.name">Postman-Token</stringProp>
                 <stringProp name="Header.value">0d756e88-d800-4b15-86d9-fcf29178abe9</stringProp>
               </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame-qa.iimb.ernet.in</stringProp>
-              </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
                 <stringProp name="Header.value">gzip, deflate, br</stringProp>
@@ -1652,6 +1617,10 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               <elementProp name="Content-Length" elementType="Header">
                 <stringProp name="Header.name">Content-Length</stringProp>
                 <stringProp name="Header.value">174</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -1706,7 +1675,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- createCompany" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- createCompany" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1721,6 +1690,15 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
       </ThreadGroup>
       <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="createCompany" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\common\Downloads\iimb.jpg" elementType="HTTPFileArg">
+                <stringProp name="File.mimetype">application/octet-stream</stringProp>
+                <stringProp name="File.path">C:\Users\common\Downloads\iimb.jpg</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -1740,12 +1718,12 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ceware/ManageCompanyCmd</stringProp>
+          <stringProp name="HTTPSampler.path">ceware/ManageCompanyCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           <stringProp name="HTTPSampler.connect_timeout"></stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
@@ -1771,7 +1749,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame-qa.iimb.ernet.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -1807,7 +1785,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="1880294972">&quot;User successfully registered.&quot;</stringProp>
+              <stringProp name="34134">&quot;.&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -1855,7 +1833,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetCompanyDetails" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetCompanyDetails" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1920,7 +1898,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame-qa.iimb.ernet.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -2004,7 +1982,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- deleteCompany" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- deleteCompany" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2069,7 +2047,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame-qa.iimb.ernet.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -2312,7 +2290,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------666812362689861936368459&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}&#xd;
 ----------------------------666812362689861936368459--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2321,7 +2299,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">ceware/GetGameDetail</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -2448,7 +2426,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------720630630802166437517539&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}&#xd;
 ----------------------------720630630802166437517539--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2584,7 +2562,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------606680282946057984724242&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}&#xd;
 ----------------------------606680282946057984724242--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2741,7 +2719,7 @@ ${__setProperty(GameCompanyEntityId_subsi, ${GameCompanyEntityId_subsi})};</stri
                 <stringProp name="Argument.value">----------------------------128966392675812882445389&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;PlayerId&quot;:${__property(player_id)}}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;PlayerId&quot;:${__property(player_id)}}&#xd;
 ----------------------------128966392675812882445389--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2877,7 +2855,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------588777060281045535796171&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;GameCompanyId&quot;:&quot;744&quot;,&quot;GameCompanyEntityId&quot;:&quot;3707&quot;,&quot;PlayerId&quot;:&quot;${__property(player_id)}&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;GameCompanyId&quot;:&quot;744&quot;,&quot;GameCompanyEntityId&quot;:&quot;3707&quot;,&quot;PlayerId&quot;:&quot;${__property(player_id)}&quot;}&#xd;
 ----------------------------588777060281045535796171--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3013,7 +2991,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------333448233750199315579128&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;PlayerId&quot;:${__property(player_id)}}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;PlayerId&quot;:${__property(player_id)}}&#xd;
 ----------------------------333448233750199315579128--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3285,7 +3263,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------941553189025835433556382&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period1Started&quot;,&quot;StartedAt&quot;:1610877772946}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period1Started&quot;,&quot;StartedAt&quot;:1610877772946}&#xd;
 ----------------------------941553189025835433556382--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3351,138 +3329,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="860976774">&quot;Game edited successfully.&quot;</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-            <stringProp name="Assertion.scope">all</stringProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-            <boolProp name="ResultCollector.error_logging">false</boolProp>
-            <objProp>
-              <name>saveConfig</name>
-              <value class="SampleSaveConfiguration">
-                <time>true</time>
-                <latency>true</latency>
-                <timestamp>true</timestamp>
-                <success>true</success>
-                <label>true</label>
-                <code>true</code>
-                <message>true</message>
-                <threadName>true</threadName>
-                <dataType>true</dataType>
-                <encoding>false</encoding>
-                <assertions>true</assertions>
-                <subresults>true</subresults>
-                <responseData>false</responseData>
-                <samplerData>false</samplerData>
-                <xml>false</xml>
-                <fieldNames>true</fieldNames>
-                <responseHeaders>false</responseHeaders>
-                <requestHeaders>false</requestHeaders>
-                <responseDataOnError>false</responseDataOnError>
-                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-                <assertionsResultsToSave>0</assertionsResultsToSave>
-                <bytes>true</bytes>
-                <sentBytes>true</sentBytes>
-                <url>true</url>
-                <threadCounts>true</threadCounts>
-                <idleTime>true</idleTime>
-                <connectTime>true</connectTime>
-              </value>
-            </objProp>
-            <stringProp name="filename"></stringProp>
-          </ResultCollector>
-          <hashTree/>
-        </hashTree>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- RegisterUserByEmail_HQ" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
-        </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
-        <stringProp name="ThreadGroup.delay"></stringProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-      </ThreadGroup>
-      <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="RegisterUserByEmail_HQ" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">----------------------------707937867174522495088606&#xd;
-Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
-&#xd;
-{&quot;User&quot;:{&quot;PrimaryEmail&quot;:&quot;${__property(HQ_email)}&quot;,&quot;Password&quot;:&quot;123456&quot;,&quot;Context&quot;:&quot;User&quot;,&quot;Player&quot;:{&quot;GameId&quot;:&quot;${game_id}&quot;}},&quot;Org&quot;:{&quot;OrgId&quot;:1}}&#xd;
-----------------------------707937867174522495088606--&#xd;
-</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain"></stringProp>
-          <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/RegisterUserByEmail</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-              <elementProp name="User-Agent" elementType="Header">
-                <stringProp name="Header.name">User-Agent</stringProp>
-                <stringProp name="Header.value">PostmanRuntime/7.26.8</stringProp>
-              </elementProp>
-              <elementProp name="Postman-Token" elementType="Header">
-                <stringProp name="Header.name">Postman-Token</stringProp>
-                <stringProp name="Header.value">efbee2df-aad6-47f6-81e2-c2c7652ad89a</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
-              </elementProp>
-              <elementProp name="Accept-Encoding" elementType="Header">
-                <stringProp name="Header.name">Accept-Encoding</stringProp>
-                <stringProp name="Header.value">gzip, deflate, br</stringProp>
-              </elementProp>
-              <elementProp name="Connection" elementType="Header">
-                <stringProp name="Header.name">Connection</stringProp>
-                <stringProp name="Header.value">keep-alive</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------707937867174522495088606</stringProp>
-              </elementProp>
-              <elementProp name="Content-Length" elementType="Header">
-                <stringProp name="Header.name">Content-Length</stringProp>
-                <stringProp name="Header.value">290</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="1880294972">&quot;User successfully registered.&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -3652,7 +3498,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="RegisterUserByEmail_HQ" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="RegisterUserByEmail_Subsi" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -3661,7 +3507,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------707937867174522495088606&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;User&quot;:{&quot;PrimaryEmail&quot;:&quot;${__property(subsi_email)}&quot;,&quot;Password&quot;:&quot;123456&quot;,&quot;Context&quot;:&quot;User&quot;,&quot;Player&quot;:{&quot;GameId&quot;:&quot;${game_id}&quot;}},&quot;Org&quot;:{&quot;OrgId&quot;:1}}&#xd;
+{&quot;User&quot;:{&quot;PrimaryEmail&quot;:&quot;${__property(subsi_email)}&quot;,&quot;Password&quot;:&quot;123456&quot;,&quot;Context&quot;:&quot;User&quot;,&quot;Player&quot;:{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}},&quot;Org&quot;:{&quot;OrgId&quot;:1}}&#xd;
 ----------------------------707937867174522495088606--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -3784,7 +3630,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LoginVerificationCmdByEmail_HQ" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LoginVerificationCmdByEmail_Subsi" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -3878,7 +3724,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetHQPeriod1Details" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- RegisterUserByEmail_HQ" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3892,17 +3738,17 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetHQPeriod1Details" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="RegisterUserByEmail_HQ" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">----------------------------359033231100849419779888&#xd;
+                <stringProp name="Argument.value">----------------------------707937867174522495088606&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:${game_id},&quot;GameCompanyId&quot;:944}&#xd;
-----------------------------359033231100849419779888--&#xd;
+{&quot;User&quot;:{&quot;PrimaryEmail&quot;:&quot;${__property(HQ_email)}&quot;,&quot;Password&quot;:&quot;123456&quot;,&quot;Context&quot;:&quot;User&quot;,&quot;Player&quot;:{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}},&quot;Org&quot;:{&quot;OrgId&quot;:1}}&#xd;
+----------------------------707937867174522495088606--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -3912,7 +3758,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/GetHQPeriod1Details</stringProp>
+          <stringProp name="HTTPSampler.path">ceware/RegisterUserByEmail</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3929,17 +3775,13 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Header.name">Accept</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
-              <elementProp name="Authorization" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">${__property(player_token)}</stringProp>
-              </elementProp>
               <elementProp name="User-Agent" elementType="Header">
                 <stringProp name="Header.name">User-Agent</stringProp>
                 <stringProp name="Header.value">PostmanRuntime/7.26.8</stringProp>
               </elementProp>
               <elementProp name="Postman-Token" elementType="Header">
                 <stringProp name="Header.name">Postman-Token</stringProp>
-                <stringProp name="Header.value">57e82392-749c-4f58-8013-edb3b85c20f5</stringProp>
+                <stringProp name="Header.value">efbee2df-aad6-47f6-81e2-c2c7652ad89a</stringProp>
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
@@ -3955,23 +3797,18 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Content-Type" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------359033231100849419779888</stringProp>
+                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------707937867174522495088606</stringProp>
               </elementProp>
               <elementProp name="Content-Length" elementType="Header">
                 <stringProp name="Header.name">Content-Length</stringProp>
-                <stringProp name="Header.value">193</stringProp>
+                <stringProp name="Header.value">290</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
-            <stringProp name="RandomTimer.range">386.0</stringProp>
-            <stringProp name="ConstantTimer.delay">772.0</stringProp>
-          </UniformRandomTimer>
-          <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
-              <stringProp name="-585922992">&quot;Status&quot;:&quot;Ok&quot;</stringProp>
+              <stringProp name="1880294972">&quot;User successfully registered.&quot;</stringProp>
             </collectionProp>
             <stringProp name="Assertion.custom_message"></stringProp>
             <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -4018,79 +3855,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetHQPeriod1Details" enabled="false">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">----------------------------846318238214898823356926&#xd;
-Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
-&#xd;
-{&quot;GameId&quot;:${game_id},&quot;GameCompanyId&quot;:822}&#xd;
-----------------------------846318238214898823356926--&#xd;
-</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">cegame-qa.iimb.ernet.in</stringProp>
-          <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/GetHQPeriod1Details</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-              <elementProp name="Authorization" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">${__property(player_token)}</stringProp>
-              </elementProp>
-              <elementProp name="User-Agent" elementType="Header">
-                <stringProp name="Header.name">User-Agent</stringProp>
-                <stringProp name="Header.value">PostmanRuntime/7.26.8</stringProp>
-              </elementProp>
-              <elementProp name="Postman-Token" elementType="Header">
-                <stringProp name="Header.name">Postman-Token</stringProp>
-                <stringProp name="Header.value">c784a524-142f-4041-8e87-7c5afb2316ac</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame-qa.iimb.ernet.in</stringProp>
-              </elementProp>
-              <elementProp name="Accept-Encoding" elementType="Header">
-                <stringProp name="Header.name">Accept-Encoding</stringProp>
-                <stringProp name="Header.value">gzip, deflate, br</stringProp>
-              </elementProp>
-              <elementProp name="Connection" elementType="Header">
-                <stringProp name="Header.name">Connection</stringProp>
-                <stringProp name="Header.value">keep-alive</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------846318238214898823356926</stringProp>
-              </elementProp>
-              <elementProp name="Content-Length" elementType="Header">
-                <stringProp name="Header.name">Content-Length</stringProp>
-                <stringProp name="Header.value">193</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-        </hashTree>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- performAction_HQ" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -4115,7 +3879,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------850137691678216096862803&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:0,&quot;ProjectId&quot;:99,&quot;Fund&quot;:10,&quot;COType&quot;:&quot;LowCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0,&quot;HqPitchQuality&quot;:&quot;BadPQ&quot;,&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId)}&quot;,&quot;GameCompanyEntityId&quot;:${__property(GameCompanyEntityId_subsi)}}]}&#xd;
+{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:0,&quot;ProjectId&quot;:99,&quot;Fund&quot;:10,&quot;COType&quot;:&quot;LowCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0,&quot;HqPitchQuality&quot;:&quot;BadPQ&quot;,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId)}&quot;,&quot;GameCompanyEntityId&quot;:${__property(GameCompanyEntityId_subsi)}}]}&#xd;
 ----------------------------850137691678216096862803--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -4254,7 +4018,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------821082727487359952438710&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:0,&quot;ProjectId&quot;:99,&quot;Fund&quot;:12,&quot;COType&quot;:&quot;LowCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0,&quot;HqPitchQuality&quot;:&quot;AveragePQ&quot;,&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;GameCompanyId&quot;:&quot;940&quot;,&quot;GameCompanyEntityId&quot;:4688}]}&#xd;
+{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:0,&quot;ProjectId&quot;:99,&quot;Fund&quot;:12,&quot;COType&quot;:&quot;LowCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0,&quot;HqPitchQuality&quot;:&quot;AveragePQ&quot;,&quot;GameId&quot;:&quot;$property{game_id}&quot;,&quot;GameCompanyId&quot;:&quot;940&quot;,&quot;GameCompanyEntityId&quot;:4688}]}&#xd;
 ----------------------------821082727487359952438710--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -4342,7 +4106,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------370617152031382132915422&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:${game_id},&quot;GameCompanyId&quot;:944,&quot;PlayerId&quot;:14392}&#xd;
+{&quot;GameId&quot;:${__property(game_id)},&quot;GameCompanyId&quot;:944,&quot;PlayerId&quot;:14392}&#xd;
 ----------------------------370617152031382132915422--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -4423,6 +4187,324 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetHQPeriod1Details" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetHQPeriod1Details" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">----------------------------359033231100849419779888&#xd;
+Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
+&#xd;
+{&quot;GameId&quot;:${__property(game_id)},&quot;GameCompanyId&quot;:944}&#xd;
+----------------------------359033231100849419779888--&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">ceware/GetHQPeriod1Details</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${__property(player_token)}</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">PostmanRuntime/7.26.8</stringProp>
+              </elementProp>
+              <elementProp name="Postman-Token" elementType="Header">
+                <stringProp name="Header.name">Postman-Token</stringProp>
+                <stringProp name="Header.value">57e82392-749c-4f58-8013-edb3b85c20f5</stringProp>
+              </elementProp>
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------359033231100849419779888</stringProp>
+              </elementProp>
+              <elementProp name="Content-Length" elementType="Header">
+                <stringProp name="Header.name">Content-Length</stringProp>
+                <stringProp name="Header.value">193</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">386.0</stringProp>
+            <stringProp name="ConstantTimer.delay">772.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-585922992">&quot;Status&quot;:&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetHQPeriod1Details" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">----------------------------846318238214898823356926&#xd;
+Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
+&#xd;
+{&quot;GameId&quot;:$property{game_id},&quot;GameCompanyId&quot;:822}&#xd;
+----------------------------846318238214898823356926--&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">cegame-qa.iimb.ernet.in</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">ceware/GetHQPeriod1Details</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${__property(player_token)}</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">PostmanRuntime/7.26.8</stringProp>
+              </elementProp>
+              <elementProp name="Postman-Token" elementType="Header">
+                <stringProp name="Header.name">Postman-Token</stringProp>
+                <stringProp name="Header.value">c784a524-142f-4041-8e87-7c5afb2316ac</stringProp>
+              </elementProp>
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">cegame-qa.iimb.ernet.in</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------846318238214898823356926</stringProp>
+              </elementProp>
+              <elementProp name="Content-Length" elementType="Header">
+                <stringProp name="Header.name">Content-Length</stringProp>
+                <stringProp name="Header.value">193</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- SubsifutureAction" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SubsifutureAction" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">----------------------------812105107725091134260311&#xd;
+Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
+&#xd;
+{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:${__property(HqProjectId)},&quot;SubsiFutureActionType&quot;:&quot;Incubate&quot;,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId_subsi)}&quot;,&quot;GameCompanyEntityId&quot;:&quot;${__property(GameCompanyEntityId_subsi)}&quot;,&quot;Edited&quot;:true}]}&#xd;
+----------------------------812105107725091134260311--&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">ceware/ManageProjectCmd</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${__property(subsi_token)}</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">PostmanRuntime/7.26.8</stringProp>
+              </elementProp>
+              <elementProp name="Postman-Token" elementType="Header">
+                <stringProp name="Header.name">Postman-Token</stringProp>
+                <stringProp name="Header.value">b2aca226-ca04-4056-ad70-1156efa88a6f</stringProp>
+              </elementProp>
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------812105107725091134260311</stringProp>
+              </elementProp>
+              <elementProp name="Content-Length" elementType="Header">
+                <stringProp name="Header.name">Content-Length</stringProp>
+                <stringProp name="Header.value">314</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-585922992">&quot;Status&quot;:&quot;Ok&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <stringProp name="RandomTimer.range">394.0</stringProp>
+            <stringProp name="ConstantTimer.delay">788.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- ManageSubsiProjectsCmd" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -4446,7 +4528,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------931541700543103278062545&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;SubsiProjectsData&quot;:[{&quot;SubsiProjectId&quot;:0,&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId_subsi)}&quot;,&quot;GameCompanyEntityId&quot;:&quot;${__property(GameCompanyEntityId_subsi)}&quot;,&quot;ProjectId&quot;:99,&quot;Context&quot;:&quot;Pitched&quot;,&quot;COType&quot;:&quot;HighCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0}]}&#xd;
+{&quot;SubsiProjectsData&quot;:[{&quot;SubsiProjectId&quot;:0,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId_subsi)}&quot;,&quot;GameCompanyEntityId&quot;:&quot;${__property(GameCompanyEntityId_subsi)}&quot;,&quot;ProjectId&quot;:99,&quot;Context&quot;:&quot;Pitched&quot;,&quot;COType&quot;:&quot;HighCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0}]}&#xd;
 &#xd;
 ----------------------------931541700543103278062545--&#xd;
 </stringProp>
@@ -4551,7 +4633,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------389873955725537914488038&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period1Ended&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period1Ended&quot;}&#xd;
 ----------------------------389873955725537914488038--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -4650,7 +4732,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------681585441957424129285574&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period2Started&quot;,&quot;Period2StartedAt&quot;:1609940485104}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period2Started&quot;,&quot;Period2StartedAt&quot;:1609940485104}&#xd;
 ----------------------------681585441957424129285574--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -4754,7 +4836,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------923871887039645192346175&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:${__property(HqProjectId)},&quot;HqFutureActionType&quot;:&quot;Incubate&quot;,&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId)}&quot;,&quot;GameCompanyEntityId&quot;:${__property(GameCompanyEntityId)},&quot;Edited&quot;:true}]}&#xd;
+{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:${__property(HqProjectId)},&quot;HqFutureActionType&quot;:&quot;Incubate&quot;,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId)}&quot;,&quot;GameCompanyEntityId&quot;:${__property(GameCompanyEntityId)},&quot;Edited&quot;:true}]}&#xd;
 ----------------------------923871887039645192346175--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -4835,110 +4917,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- SubsifutureAction" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
-        </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
-        <stringProp name="ThreadGroup.delay"></stringProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-      </ThreadGroup>
-      <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SubsifutureAction" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">----------------------------812105107725091134260311&#xd;
-Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
-&#xd;
-{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:${__property(HqProjectId)},&quot;SubsiFutureActionType&quot;:&quot;Incubate&quot;,&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;GameCompanyId&quot;:&quot;${__property(GameCompanyId_subsi)}&quot;,&quot;GameCompanyEntityId&quot;:&quot;${__property(GameCompanyEntityId_subsi)}&quot;,&quot;Edited&quot;:true}]}&#xd;
-----------------------------812105107725091134260311--&#xd;
-</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain"></stringProp>
-          <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ManageProjectCmd</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-              <elementProp name="Authorization" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">${__property(subsi_token)}</stringProp>
-              </elementProp>
-              <elementProp name="User-Agent" elementType="Header">
-                <stringProp name="Header.name">User-Agent</stringProp>
-                <stringProp name="Header.value">PostmanRuntime/7.26.8</stringProp>
-              </elementProp>
-              <elementProp name="Postman-Token" elementType="Header">
-                <stringProp name="Header.name">Postman-Token</stringProp>
-                <stringProp name="Header.value">b2aca226-ca04-4056-ad70-1156efa88a6f</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
-              </elementProp>
-              <elementProp name="Accept-Encoding" elementType="Header">
-                <stringProp name="Header.name">Accept-Encoding</stringProp>
-                <stringProp name="Header.value">gzip, deflate, br</stringProp>
-              </elementProp>
-              <elementProp name="Connection" elementType="Header">
-                <stringProp name="Header.name">Connection</stringProp>
-                <stringProp name="Header.value">keep-alive</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------812105107725091134260311</stringProp>
-              </elementProp>
-              <elementProp name="Content-Length" elementType="Header">
-                <stringProp name="Header.name">Content-Length</stringProp>
-                <stringProp name="Header.value">314</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="-585922992">&quot;Status&quot;:&quot;Ok&quot;</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-            <stringProp name="Assertion.scope">all</stringProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
-            <stringProp name="RandomTimer.range">394.0</stringProp>
-            <stringProp name="ConstantTimer.delay">788.0</stringProp>
-          </UniformRandomTimer>
-          <hashTree/>
-        </hashTree>
-      </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- stopPeriod2" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -4962,7 +4940,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------433059358275175027867597&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period2Ended&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Period2Ended&quot;}&#xd;
 ----------------------------433059358275175027867597--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -5066,7 +5044,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------537939776625812609433418&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
- {&quot;GameId&quot;:&quot;${game_id}&quot;}&#xd;
+ {&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}&#xd;
 ----------------------------537939776625812609433418--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -5170,7 +5148,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------605710991656940391407264&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}&#xd;
 ----------------------------605710991656940391407264--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -5251,7 +5229,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- CancelGameCmd" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- CancelGameCmd" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -5274,7 +5252,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------141432454263895521215941&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;Status&quot;:&quot;Cancelled&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;}&#xd;
+{&quot;GameId&quot;:&quot;$property{game_id}&quot;,&quot;Status&quot;:&quot;Cancelled&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;}&#xd;
 ----------------------------141432454263895521215941--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -5355,7 +5333,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- DeleteGameCmd" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- DeleteGameCmd" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -5378,7 +5356,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------141432454263895521215941&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;${game_id}&quot;,&quot;isDeleted&quot;:&quot;true&quot;}&#xd;
+{&quot;GameId&quot;:&quot;$property{game_id}&quot;,&quot;isDeleted&quot;:&quot;true&quot;}&#xd;
 ----------------------------141432454263895521215941--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>

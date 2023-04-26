@@ -15,9 +15,9 @@
         <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments"/>
         </elementProp>
-        <stringProp name="HTTPSampler.domain">cegame.iimb.ac.in</stringProp>
-        <stringProp name="HTTPSampler.port"></stringProp>
-        <stringProp name="HTTPSampler.protocol">https</stringProp>
+        <stringProp name="HTTPSampler.domain">localhost</stringProp>
+        <stringProp name="HTTPSampler.port">80</stringProp>
+        <stringProp name="HTTPSampler.protocol">http</stringProp>
         <stringProp name="HTTPSampler.contentEncoding"></stringProp>
         <stringProp name="HTTPSampler.path"></stringProp>
         <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
@@ -57,9 +57,9 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/LoginVerificationCmdByEmail</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/LoginVerificationCmdByEmail</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -88,9 +88,112 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Header.name">Postman-Token</stringProp>
                 <stringProp name="Header.value">5ae19461-8490-48d6-8dfe-d5ae28979d5d</stringProp>
               </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------153250468293768891984643</stringProp>
+              </elementProp>
+              <elementProp name="Content-Length" elementType="Header">
+                <stringProp name="Header.name">Content-Length</stringProp>
+                <stringProp name="Header.value">221</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">token</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.RelatedData[0]</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+            <stringProp name="BeanShellAssertion.query">${__setProperty(token, ${token})};</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LoginVerificationCmdByEmail" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">----------------------------153250468293768891984643&#xd;
+Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
+&#xd;
+{&quot;PrimaryEmail&quot;:&quot;vinay.aj@appzui.com&quot;,&quot;Password&quot;:&quot;123456&quot;}&#xd;
+----------------------------153250468293768891984643--&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/LoginVerificationCmdByEmail</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -165,9 +268,9 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CreateGame" enabled="true">
           <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
             <collectionProp name="HTTPFileArgs.files">
-              <elementProp name="C:\Users\common\Downloads\IIMB-CEGame-Test\game_Sheet1.csv" elementType="HTTPFileArg">
+              <elementProp name="C:\Users\tibil\Documents\IIMB-Test\players_localhost.csv" elementType="HTTPFileArg">
                 <stringProp name="File.mimetype">text/csv</stringProp>
-                <stringProp name="File.path">C:\Users\common\Downloads\IIMB-CEGame-Test\game_Sheet1.csv</stringProp>
+                <stringProp name="File.path">C:\Users\tibil\Documents\IIMB-Test\players_localhost.csv</stringProp>
                 <stringProp name="File.paramname">file</stringProp>
               </elementProp>
             </collectionProp>
@@ -176,7 +279,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
             <collectionProp name="Arguments.arguments">
               <elementProp name="Args" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;test&quot;,&quot;Venue&quot;:&quot;test&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-04-25&quot;,&quot;StartTime&quot;:&quot;11:28&quot;,&quot;EndTime&quot;:&quot;12:54&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}</stringProp>
+                <stringProp name="Argument.value">{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;test&quot;,&quot;Venue&quot;:&quot;test&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-04-24&quot;,&quot;StartTime&quot;:&quot;18:30&quot;,&quot;EndTime&quot;:&quot;21:45&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">Args</stringProp>
@@ -185,9 +288,9 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           </elementProp>
           <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ManageGameCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ManageGameCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -266,7 +369,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- createCompmnay" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- createCompmnay" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -300,11 +403,11 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">cegame.iimb.ac.in</stringProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ceware/ManageCompanyCmd</stringProp>
+          <stringProp name="HTTPSampler.path">/cewarerepo/ManageCompanyCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -332,10 +435,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               <elementProp name="Postman-Token" elementType="Header">
                 <stringProp name="Header.name">Postman-Token</stringProp>
                 <stringProp name="Header.value">f34453b3-e05f-4912-95c4-97181640836c</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -434,7 +533,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------363661026405367029339224&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;UserId&quot;:&quot;1966&quot;,&quot;GameId&quot;:&quot;$propertypropertyproperty{game_id}&quot;,&quot;Name&quot;:&quot;editedgame&quot;,&quot;Venue&quot;:&quot;hassan&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;${__time(yyyy-MM-dd)}&quot;,&quot;StartTime&quot;:&quot;${__time(HH:mm,)}&quot;,&quot;EndTime&quot;:&quot;14:00&quot;,&quot;CompaniesCount&quot;:2,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;,&quot;NoOfInstances&quot;:1},{&quot;id&quot;:&quot;9&quot;,&quot;NoOfInstances&quot;:1}],&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Scheduled&quot;,&quot;ShareBrief&quot;:false,&quot;isNewPlayersList&quot;:false}&#xd;
+{&quot;UserId&quot;:&quot;1966&quot;,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;Name&quot;:&quot;editedgame&quot;,&quot;Venue&quot;:&quot;hassan&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;${__time(yyyy-MM-dd)}&quot;,&quot;StartTime&quot;:&quot;${__time(HH:mm,)}&quot;,&quot;EndTime&quot;:&quot;14:00&quot;,&quot;CompaniesCount&quot;:2,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;,&quot;NoOfInstances&quot;:1},{&quot;id&quot;:&quot;9&quot;,&quot;NoOfInstances&quot;:1}],&quot;OpFlag&quot;:&quot;Edit&quot;,&quot;Status&quot;:&quot;Scheduled&quot;,&quot;ShareBrief&quot;:false,&quot;isNewPlayersList&quot;:false}&#xd;
 &#xd;
 ----------------------------363661026405367029339224&#xd;
 &#xd;
@@ -445,11 +544,11 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">cegame.iimb.ac.in</stringProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ManageGameCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ManageGameCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -477,10 +576,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               <elementProp name="Postman-Token" elementType="Header">
                 <stringProp name="Header.name">Postman-Token</stringProp>
                 <stringProp name="Header.value">f34453b3-e05f-4912-95c4-97181640836c</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -570,7 +665,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PlayerResetAssignmentCmd" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PlayerResetAssignmentCmd" enabled="false">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -579,7 +674,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------363661026405367029339224&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;$propertypropertyproperty{game_id}&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}&#xd;
 &#xd;
 ----------------------------363661026405367029339224&#xd;
 &#xd;
@@ -590,11 +685,11 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">cegame.iimb.ac.in</stringProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ceware/PlayerResetAssignmentCmd</stringProp>
+          <stringProp name="HTTPSampler.path">/cewarerepo/PlayerResetAssignmentCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -622,10 +717,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               <elementProp name="Postman-Token" elementType="Header">
                 <stringProp name="Header.name">Postman-Token</stringProp>
                 <stringProp name="Header.value">f34453b3-e05f-4912-95c4-97181640836c</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -696,7 +787,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- EditUserDetails" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- EditUserDetails" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -730,7 +821,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/EditUserDetails</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/EditUserDetails</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -761,7 +852,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -832,7 +923,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- EditInstructionCmd" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- EditInstructionCmd" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -867,7 +958,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ceware/EditInstructionCmd</stringProp>
+          <stringProp name="HTTPSampler.path">/cewarerepo/EditInstructionCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -898,7 +989,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -969,7 +1060,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetDashBoardData" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetDashBoardData" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1003,7 +1094,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/GetDashBoardData</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/GetDashBoardData</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1034,7 +1125,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -1105,7 +1196,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- createInstructor" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- createInstructor" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1139,7 +1230,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/RegisterUserByEmail</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/RegisterUserByEmail</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1170,7 +1261,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -1254,7 +1345,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- deleteInstructor" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- deleteInstructor" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -1288,7 +1379,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/DeleteUserCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/DeleteUserCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1319,7 +1410,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -1424,7 +1515,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/RegisterUserByEmail</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/RegisterUserByEmail</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1455,7 +1546,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegame-qa.iimb.ernet.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -1573,7 +1664,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/DeleteUserCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/DeleteUserCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -1604,7 +1695,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegame-qa.iimb.ernet.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -1675,454 +1766,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- createCompany" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
-        </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
-        <stringProp name="ThreadGroup.delay"></stringProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-      </ThreadGroup>
-      <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="createCompany" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">----------------------------641155615376264617555126&#xd;
-Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
-&#xd;
-{&quot;Name&quot;:&quot;Test Company api&quot;,&quot;Brief&quot;:&quot;api test&quot;,&quot;MncIncome&quot;:&quot;100&quot;,&quot;ProjMinAsk&quot;:&quot;20&quot;,&quot;PayoffDetails&quot;:[{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Spinoff&quot;,&quot;ActualChoice&quot;:&quot;Spinoff&quot;,&quot;PayoffAmount&quot;:&quot;2&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Spinoff&quot;,&quot;ActualChoice&quot;:&quot;Internalize&quot;,&quot;PayoffAmount&quot;:&quot;3&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Spinoff&quot;,&quot;ActualChoice&quot;:&quot;Shutdown&quot;,&quot;PayoffAmount&quot;:&quot;1&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Spinoff&quot;,&quot;ActualChoice&quot;:&quot;Incubate&quot;,&quot;PayoffAmount&quot;:&quot;3&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Internalize&quot;,&quot;ActualChoice&quot;:&quot;Spinoff&quot;,&quot;PayoffAmount&quot;:&quot;2&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Internalize&quot;,&quot;ActualChoice&quot;:&quot;Internalize&quot;,&quot;PayoffAmount&quot;:&quot;3&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Internalize&quot;,&quot;ActualChoice&quot;:&quot;Shutdown&quot;,&quot;PayoffAmount&quot;:&quot;3&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Internalize&quot;,&quot;ActualChoice&quot;:&quot;Incubate&quot;,&quot;PayoffAmount&quot;:&quot;2&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Shutdown&quot;,&quot;ActualChoice&quot;:&quot;Spinoff&quot;,&quot;PayoffAmount&quot;:&quot;3&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Shutdown&quot;,&quot;ActualChoice&quot;:&quot;Internalize&quot;,&quot;PayoffAmount&quot;:&quot;2&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Shutdown&quot;,&quot;ActualChoice&quot;:&quot;Shutdown&quot;,&quot;PayoffAmount&quot;:&quot;3&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Shutdown&quot;,&quot;ActualChoice&quot;:&quot;Incubate&quot;,&quot;PayoffAmount&quot;:&quot;2&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Incubate&quot;,&quot;ActualChoice&quot;:&quot;Spinoff&quot;,&quot;PayoffAmount&quot;:&quot;2&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Incubate&quot;,&quot;ActualChoice&quot;:&quot;Internalize&quot;,&quot;PayoffAmount&quot;:&quot;3&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Incubate&quot;,&quot;ActualChoice&quot;:&quot;Shutdown&quot;,&quot;PayoffAmount&quot;:&quot;2&quot;},{&quot;PayoffMatrixCompanyId&quot;:0,&quot;OptimumChoice&quot;:&quot;Incubate&quot;,&quot;ActualChoice&quot;:&quot;Incubate&quot;,&quot;PayoffAmount&quot;:&quot;3&quot;}],&quot;SubsidiariesDetails&quot;:[{&quot;Id&quot;:0,&quot;Name&quot;:&quot;SubsidiaryTest1&quot;,&quot;Brief&quot;:&quot;az&quot;},{&quot;Id&quot;:0,&quot;Name&quot;:&quot;SubsidiaryTest2&quot;,&quot;Brief&quot;:&quot;azz&quot;},{&quot;Id&quot;:0,&quot;Name&quot;:&quot;SubsidiaryTest3&quot;,&quot;Brief&quot;:&quot;azz&quot;},{&quot;Id&quot;:0,&quot;Name&quot;:&quot;SubsidiaryTest4&quot;,&quot;Brief&quot;:&quot;azzz&quot;}],&quot;ProjectsDetails&quot;:[{&quot;Id&quot;:0,&quot;Name&quot;:&quot;ProjectTest1&quot;,&quot;SubsidiaryName&quot;:&quot;SubsidiaryTest1&quot;,&quot;HorizonType&quot;:&quot;LH&quot;,&quot;Brief&quot;:&quot;az&quot;},{&quot;Id&quot;:0,&quot;Name&quot;:&quot;ProjectTest2&quot;,&quot;SubsidiaryName&quot;:&quot;SubsidiaryTest1&quot;,&quot;HorizonType&quot;:&quot;LH&quot;,&quot;Brief&quot;:&quot;azz&quot;},{&quot;Id&quot;:0,&quot;Name&quot;:&quot;ProjectTest3&quot;,&quot;SubsidiaryName&quot;:&quot;SubsidiaryTest1&quot;,&quot;HorizonType&quot;:&quot;LH&quot;,&quot;Brief&quot;:&quot;azz&quot;},{&quot;Id&quot;:0,&quot;Name&quot;:&quot;ProjectTest4&quot;,&quot;SubsidiaryName&quot;:&quot;SubsidiaryTest1&quot;,&quot;HorizonType&quot;:&quot;LH&quot;,&quot;Brief&quot;:&quot;azz&quot;},{&quot;Id&quot;:0,&quot;Name&quot;:&quot;ProjectTest5&quot;,&quot;SubsidiaryName&quot;:&quot;SubsidiaryTest1&quot;,&quot;HorizonType&quot;:&quot;LH&quot;,&quot;Brief&quot;:&quot;azz&quot;},{&quot;Id&quot;:0,&quot;Name&quot;:&quot;ProjectTest6&quot;,&quot;SubsidiaryName&quot;:&quot;SubsidiaryTest1&quot;,&quot;HorizonType&quot;:&quot;LH&quot;,&quot;Brief&quot;:&quot;azz&quot;},{&quot;Id&quot;:0,&quot;Name&quot;:&quot;ProjectTest7&quot;,&quot;SubsidiaryName&quot;:&quot;SubsidiaryTest1&quot;,&quot;HorizonType&quot;:&quot;LH&quot;,&quot;Brief&quot;:&quot;azz&quot;},{&quot;Id&quot;:0,&quot;Name&quot;:&quot;ProjectTest8&quot;,&quot;SubsidiaryName&quot;:&quot;SubsidiaryTest1&quot;,&quot;HorizonType&quot;:&quot;LH&quot;,&quot;Brief&quot;:&quot;azz&quot;}],&quot;Outcomes&quot;:[{&quot;ProjectName&quot;:&quot;ProjectTest1&quot;,&quot;Title&quot;:&quot;Shutdown&quot;,&quot;Message&quot;:&quot;test1&quot;,&quot;FutureActionType&quot;:&quot;Shutdown&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest1&quot;,&quot;Title&quot;:&quot;Incubate&quot;,&quot;Message&quot;:&quot;test2&quot;,&quot;FutureActionType&quot;:&quot;Incubate&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest1&quot;,&quot;Title&quot;:&quot;Internalize&quot;,&quot;Message&quot;:&quot;test3&quot;,&quot;FutureActionType&quot;:&quot;Internalize&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest1&quot;,&quot;Title&quot;:&quot;Spinoff&quot;,&quot;Message&quot;:&quot;test4&quot;,&quot;FutureActionType&quot;:&quot;Spinoff&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest2&quot;,&quot;Title&quot;:&quot;Shutdown&quot;,&quot;Message&quot;:&quot;test1&quot;,&quot;FutureActionType&quot;:&quot;Shutdown&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest2&quot;,&quot;Title&quot;:&quot;Incubate&quot;,&quot;Message&quot;:&quot;test2&quot;,&quot;FutureActionType&quot;:&quot;Incubate&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest2&quot;,&quot;Title&quot;:&quot;Internalize&quot;,&quot;Message&quot;:&quot;test3&quot;,&quot;FutureActionType&quot;:&quot;Internalize&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest2&quot;,&quot;Title&quot;:&quot;Spinoff&quot;,&quot;Message&quot;:&quot;test4&quot;,&quot;FutureActionType&quot;:&quot;Spinoff&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest3&quot;,&quot;Title&quot;:&quot;Shutdown&quot;,&quot;Message&quot;:&quot;test1&quot;,&quot;FutureActionType&quot;:&quot;Shutdown&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest3&quot;,&quot;Title&quot;:&quot;Incubate&quot;,&quot;Message&quot;:&quot;test2&quot;,&quot;FutureActionType&quot;:&quot;Incubate&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest3&quot;,&quot;Title&quot;:&quot;Internalize&quot;,&quot;Message&quot;:&quot;test3&quot;,&quot;FutureActionType&quot;:&quot;Internalize&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest3&quot;,&quot;Title&quot;:&quot;Spinoff&quot;,&quot;Message&quot;:&quot;test4&quot;,&quot;FutureActionType&quot;:&quot;Spinoff&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest4&quot;,&quot;Title&quot;:&quot;Shutdown&quot;,&quot;Message&quot;:&quot;test1&quot;,&quot;FutureActionType&quot;:&quot;Shutdown&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest4&quot;,&quot;Title&quot;:&quot;Incubate&quot;,&quot;Message&quot;:&quot;test2&quot;,&quot;FutureActionType&quot;:&quot;Incubate&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest4&quot;,&quot;Title&quot;:&quot;Internalize&quot;,&quot;Message&quot;:&quot;test3&quot;,&quot;FutureActionType&quot;:&quot;Internalize&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest4&quot;,&quot;Title&quot;:&quot;Spinoff&quot;,&quot;Message&quot;:&quot;test4&quot;,&quot;FutureActionType&quot;:&quot;Spinoff&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest5&quot;,&quot;Title&quot;:&quot;Shutdown&quot;,&quot;Message&quot;:&quot;test1&quot;,&quot;FutureActionType&quot;:&quot;Shutdown&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest5&quot;,&quot;Title&quot;:&quot;Incubate&quot;,&quot;Message&quot;:&quot;test2&quot;,&quot;FutureActionType&quot;:&quot;Incubate&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest5&quot;,&quot;Title&quot;:&quot;Internalize&quot;,&quot;Message&quot;:&quot;test3&quot;,&quot;FutureActionType&quot;:&quot;Internalize&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest5&quot;,&quot;Title&quot;:&quot;Spinoff&quot;,&quot;Message&quot;:&quot;test4&quot;,&quot;FutureActionType&quot;:&quot;Spinoff&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest6&quot;,&quot;Title&quot;:&quot;Shutdown&quot;,&quot;Message&quot;:&quot;test1&quot;,&quot;FutureActionType&quot;:&quot;Shutdown&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest6&quot;,&quot;Title&quot;:&quot;Incubate&quot;,&quot;Message&quot;:&quot;test2&quot;,&quot;FutureActionType&quot;:&quot;Incubate&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest6&quot;,&quot;Title&quot;:&quot;Internalize&quot;,&quot;Message&quot;:&quot;test3&quot;,&quot;FutureActionType&quot;:&quot;Internalize&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest6&quot;,&quot;Title&quot;:&quot;Spinoff&quot;,&quot;Message&quot;:&quot;test4&quot;,&quot;FutureActionType&quot;:&quot;Spinoff&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest7&quot;,&quot;Title&quot;:&quot;Shutdown&quot;,&quot;Message&quot;:&quot;test1&quot;,&quot;FutureActionType&quot;:&quot;Shutdown&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest7&quot;,&quot;Title&quot;:&quot;Incubate&quot;,&quot;Message&quot;:&quot;test2&quot;,&quot;FutureActionType&quot;:&quot;Incubate&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest7&quot;,&quot;Title&quot;:&quot;Internalize&quot;,&quot;Message&quot;:&quot;test3&quot;,&quot;FutureActionType&quot;:&quot;Internalize&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest7&quot;,&quot;Title&quot;:&quot;Spinoff&quot;,&quot;Message&quot;:&quot;test4&quot;,&quot;FutureActionType&quot;:&quot;Spinoff&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest8&quot;,&quot;Title&quot;:&quot;Shutdown&quot;,&quot;Message&quot;:&quot;test1&quot;,&quot;FutureActionType&quot;:&quot;Shutdown&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest8&quot;,&quot;Title&quot;:&quot;Incubate&quot;,&quot;Message&quot;:&quot;test2&quot;,&quot;FutureActionType&quot;:&quot;Incubate&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest8&quot;,&quot;Title&quot;:&quot;Internalize&quot;,&quot;Message&quot;:&quot;test3&quot;,&quot;FutureActionType&quot;:&quot;Internalize&quot;},{&quot;ProjectName&quot;:&quot;ProjectTest8&quot;,&quot;Title&quot;:&quot;Spinoff&quot;,&quot;Message&quot;:&quot;test4&quot;,&quot;FutureActionType&quot;:&quot;Spinoff&quot;}],&quot;Logos&quot;:[{&quot;LogoId&quot;:1}],&quot;IsNewLogos&quot;:true,&quot;DeletedLogoIds&quot;:[],&quot;Status&quot;:&quot;Active&quot;}&#xd;
-----------------------------641155615376264617555126--&#xd;
-</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain"></stringProp>
-          <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ceware/ManageCompanyCmd</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-              <elementProp name="Authorization" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">${__property(token)}</stringProp>
-              </elementProp>
-              <elementProp name="User-Agent" elementType="Header">
-                <stringProp name="Header.name">User-Agent</stringProp>
-                <stringProp name="Header.value">PostmanRuntime/7.26.8</stringProp>
-              </elementProp>
-              <elementProp name="Postman-Token" elementType="Header">
-                <stringProp name="Header.name">Postman-Token</stringProp>
-                <stringProp name="Header.value">2339064b-810a-4e54-aad8-d2dd00a92e69</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
-              </elementProp>
-              <elementProp name="Accept-Encoding" elementType="Header">
-                <stringProp name="Header.name">Accept-Encoding</stringProp>
-                <stringProp name="Header.value">gzip, deflate, br</stringProp>
-              </elementProp>
-              <elementProp name="Connection" elementType="Header">
-                <stringProp name="Header.name">Connection</stringProp>
-                <stringProp name="Header.value">keep-alive</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------641155615376264617555126</stringProp>
-              </elementProp>
-              <elementProp name="Content-Length" elementType="Header">
-                <stringProp name="Header.name">Content-Length</stringProp>
-                <stringProp name="Header.value">276</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
-            <stringProp name="JSONPostProcessor.referenceNames">designer_id</stringProp>
-            <stringProp name="JSONPostProcessor.jsonPathExprs">RelatedData[0].UserId</stringProp>
-            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
-          </JSONPostProcessor>
-          <hashTree/>
-          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
-            <stringProp name="BeanShellAssertion.query">${__setProperty(designer_id, ${designer_id})};</stringProp>
-            <stringProp name="BeanShellAssertion.filename"></stringProp>
-            <stringProp name="BeanShellAssertion.parameters"></stringProp>
-            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
-          </BeanShellAssertion>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="1880294972">&quot;User successfully registered.&quot;</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-            <stringProp name="Assertion.scope">all</stringProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-            <boolProp name="ResultCollector.error_logging">false</boolProp>
-            <objProp>
-              <name>saveConfig</name>
-              <value class="SampleSaveConfiguration">
-                <time>true</time>
-                <latency>true</latency>
-                <timestamp>true</timestamp>
-                <success>true</success>
-                <label>true</label>
-                <code>true</code>
-                <message>true</message>
-                <threadName>true</threadName>
-                <dataType>true</dataType>
-                <encoding>false</encoding>
-                <assertions>true</assertions>
-                <subresults>true</subresults>
-                <responseData>false</responseData>
-                <samplerData>false</samplerData>
-                <xml>false</xml>
-                <fieldNames>true</fieldNames>
-                <responseHeaders>false</responseHeaders>
-                <requestHeaders>false</requestHeaders>
-                <responseDataOnError>false</responseDataOnError>
-                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-                <assertionsResultsToSave>0</assertionsResultsToSave>
-                <bytes>true</bytes>
-                <sentBytes>true</sentBytes>
-                <url>true</url>
-                <threadCounts>true</threadCounts>
-                <idleTime>true</idleTime>
-                <connectTime>true</connectTime>
-              </value>
-            </objProp>
-            <stringProp name="filename"></stringProp>
-          </ResultCollector>
-          <hashTree/>
-        </hashTree>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetCompanyDetails" enabled="false">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
-        </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
-        <stringProp name="ThreadGroup.delay"></stringProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-      </ThreadGroup>
-      <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetCompanyDetails" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">----------------------------641155615376264617555126&#xd;
-Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
-&#xd;
-{&quot;CompanyId&quot;:&quot;21&quot;}&#xd;
-----------------------------641155615376264617555126--&#xd;
-</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain"></stringProp>
-          <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ceware/GetCompanyDetails</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-              <elementProp name="Authorization" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">${__property(token)}</stringProp>
-              </elementProp>
-              <elementProp name="User-Agent" elementType="Header">
-                <stringProp name="Header.name">User-Agent</stringProp>
-                <stringProp name="Header.value">PostmanRuntime/7.26.8</stringProp>
-              </elementProp>
-              <elementProp name="Postman-Token" elementType="Header">
-                <stringProp name="Header.name">Postman-Token</stringProp>
-                <stringProp name="Header.value">2339064b-810a-4e54-aad8-d2dd00a92e69</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
-              </elementProp>
-              <elementProp name="Accept-Encoding" elementType="Header">
-                <stringProp name="Header.name">Accept-Encoding</stringProp>
-                <stringProp name="Header.value">gzip, deflate, br</stringProp>
-              </elementProp>
-              <elementProp name="Connection" elementType="Header">
-                <stringProp name="Header.name">Connection</stringProp>
-                <stringProp name="Header.value">keep-alive</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------641155615376264617555126</stringProp>
-              </elementProp>
-              <elementProp name="Content-Length" elementType="Header">
-                <stringProp name="Header.name">Content-Length</stringProp>
-                <stringProp name="Header.value">276</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
-            <stringProp name="JSONPostProcessor.referenceNames">designer_id</stringProp>
-            <stringProp name="JSONPostProcessor.jsonPathExprs">RelatedData[0].UserId</stringProp>
-            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
-          </JSONPostProcessor>
-          <hashTree/>
-          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
-            <stringProp name="BeanShellAssertion.query">${__setProperty(designer_id, ${designer_id})};</stringProp>
-            <stringProp name="BeanShellAssertion.filename"></stringProp>
-            <stringProp name="BeanShellAssertion.parameters"></stringProp>
-            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
-          </BeanShellAssertion>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="1880294972">&quot;User successfully registered.&quot;</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-            <stringProp name="Assertion.scope">all</stringProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-            <boolProp name="ResultCollector.error_logging">false</boolProp>
-            <objProp>
-              <name>saveConfig</name>
-              <value class="SampleSaveConfiguration">
-                <time>true</time>
-                <latency>true</latency>
-                <timestamp>true</timestamp>
-                <success>true</success>
-                <label>true</label>
-                <code>true</code>
-                <message>true</message>
-                <threadName>true</threadName>
-                <dataType>true</dataType>
-                <encoding>false</encoding>
-                <assertions>true</assertions>
-                <subresults>true</subresults>
-                <responseData>false</responseData>
-                <samplerData>false</samplerData>
-                <xml>false</xml>
-                <fieldNames>true</fieldNames>
-                <responseHeaders>false</responseHeaders>
-                <requestHeaders>false</requestHeaders>
-                <responseDataOnError>false</responseDataOnError>
-                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-                <assertionsResultsToSave>0</assertionsResultsToSave>
-                <bytes>true</bytes>
-                <sentBytes>true</sentBytes>
-                <url>true</url>
-                <threadCounts>true</threadCounts>
-                <idleTime>true</idleTime>
-                <connectTime>true</connectTime>
-              </value>
-            </objProp>
-            <stringProp name="filename"></stringProp>
-          </ResultCollector>
-          <hashTree/>
-        </hashTree>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- deleteCompany" enabled="false">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
-        </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
-        <stringProp name="ThreadGroup.delay"></stringProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-      </ThreadGroup>
-      <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="deleteCompany" enabled="true">
-          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-            <collectionProp name="Arguments.arguments">
-              <elementProp name="" elementType="HTTPArgument">
-                <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">----------------------------641155615376264617555126&#xd;
-Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
-&#xd;
-{&quot;Id&quot;:&quot;21&quot;,&quot;IsDeleted&quot;:&quot;true&quot;}&#xd;
-----------------------------641155615376264617555126--&#xd;
-</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
-              </elementProp>
-            </collectionProp>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain"></stringProp>
-          <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">http</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ceware/ManageCompanyCmds</stringProp>
-          <stringProp name="HTTPSampler.method">POST</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Accept" elementType="Header">
-                <stringProp name="Header.name">Accept</stringProp>
-                <stringProp name="Header.value">application/json</stringProp>
-              </elementProp>
-              <elementProp name="Authorization" elementType="Header">
-                <stringProp name="Header.name">Authorization</stringProp>
-                <stringProp name="Header.value">${__property(token)}</stringProp>
-              </elementProp>
-              <elementProp name="User-Agent" elementType="Header">
-                <stringProp name="Header.name">User-Agent</stringProp>
-                <stringProp name="Header.value">PostmanRuntime/7.26.8</stringProp>
-              </elementProp>
-              <elementProp name="Postman-Token" elementType="Header">
-                <stringProp name="Header.name">Postman-Token</stringProp>
-                <stringProp name="Header.value">2339064b-810a-4e54-aad8-d2dd00a92e69</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
-              </elementProp>
-              <elementProp name="Accept-Encoding" elementType="Header">
-                <stringProp name="Header.name">Accept-Encoding</stringProp>
-                <stringProp name="Header.value">gzip, deflate, br</stringProp>
-              </elementProp>
-              <elementProp name="Connection" elementType="Header">
-                <stringProp name="Header.name">Connection</stringProp>
-                <stringProp name="Header.value">keep-alive</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------641155615376264617555126</stringProp>
-              </elementProp>
-              <elementProp name="Content-Length" elementType="Header">
-                <stringProp name="Header.name">Content-Length</stringProp>
-                <stringProp name="Header.value">276</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
-            <stringProp name="JSONPostProcessor.referenceNames">designer_id</stringProp>
-            <stringProp name="JSONPostProcessor.jsonPathExprs">RelatedData[0].UserId</stringProp>
-            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
-          </JSONPostProcessor>
-          <hashTree/>
-          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
-            <stringProp name="BeanShellAssertion.query">${__setProperty(designer_id, ${designer_id})};</stringProp>
-            <stringProp name="BeanShellAssertion.filename"></stringProp>
-            <stringProp name="BeanShellAssertion.parameters"></stringProp>
-            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
-          </BeanShellAssertion>
-          <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="1880294972">&quot;User successfully registered.&quot;</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-            <stringProp name="Assertion.scope">all</stringProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-            <boolProp name="ResultCollector.error_logging">false</boolProp>
-            <objProp>
-              <name>saveConfig</name>
-              <value class="SampleSaveConfiguration">
-                <time>true</time>
-                <latency>true</latency>
-                <timestamp>true</timestamp>
-                <success>true</success>
-                <label>true</label>
-                <code>true</code>
-                <message>true</message>
-                <threadName>true</threadName>
-                <dataType>true</dataType>
-                <encoding>false</encoding>
-                <assertions>true</assertions>
-                <subresults>true</subresults>
-                <responseData>false</responseData>
-                <samplerData>false</samplerData>
-                <xml>false</xml>
-                <fieldNames>true</fieldNames>
-                <responseHeaders>false</responseHeaders>
-                <requestHeaders>false</requestHeaders>
-                <responseDataOnError>false</responseDataOnError>
-                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-                <assertionsResultsToSave>0</assertionsResultsToSave>
-                <bytes>true</bytes>
-                <sentBytes>true</sentBytes>
-                <url>true</url>
-                <threadCounts>true</threadCounts>
-                <idleTime>true</idleTime>
-                <connectTime>true</connectTime>
-              </value>
-            </objProp>
-            <stringProp name="filename"></stringProp>
-          </ResultCollector>
-          <hashTree/>
-        </hashTree>
-      </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetCompanies" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetCompanies" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2156,7 +1800,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/GetCompanies</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/GetCompanies</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2187,7 +1831,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -2258,7 +1902,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetGameDetail" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetGameDetail" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2292,7 +1936,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/GetGameDetail</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/GetGameDetail</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2323,7 +1967,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -2394,7 +2038,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetPlayerManagementDetails" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetPlayerManagementDetails" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2428,7 +2072,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/GetPlayerManagementDetails</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/GetPlayerManagementDetails</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2459,7 +2103,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -2530,7 +2174,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- InvitePlayersCmd" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- InvitePlayersCmd" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2564,7 +2208,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/InvitePlayersCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/InvitePlayersCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2595,7 +2239,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -2687,7 +2331,7 @@ ${__setProperty(GameCompanyEntityId_subsi, ${GameCompanyEntityId_subsi})};</stri
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- ResendInviteCmd" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- ResendInviteCmd" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2721,7 +2365,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ResendInviteCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ResendInviteCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2752,7 +2396,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -2823,7 +2467,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- ReassignPlayerCmd" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- ReassignPlayerCmd" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2837,7 +2481,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ReassignPlayerCmd" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ReassignPlayerCmd" enabled="false">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -2857,7 +2501,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ReassignPlayerCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ReassignPlayerCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -2888,7 +2532,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -2959,7 +2603,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- DeletePlayerCmd" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- DeletePlayerCmd" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -2993,7 +2637,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/DeletePlayerCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/DeletePlayerCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3024,7 +2668,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -3095,7 +2739,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetCommonData" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetCommonData" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3129,7 +2773,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/GetCommonData</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/GetCommonData</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3160,7 +2804,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -3231,7 +2875,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- startGame" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- startGame" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3265,7 +2909,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ManageGameCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ManageGameCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3296,7 +2940,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -3367,7 +3011,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- RegisterUserByEmail_HQ" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- RegisterUserByEmail_HQ" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3401,7 +3045,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/RegisterUserByEmail</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/RegisterUserByEmail</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3428,7 +3072,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -3499,7 +3143,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- LoginVerificationCmdByEmail_HQ" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- LoginVerificationCmdByEmail_HQ" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3533,7 +3177,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/LoginVerificationCmdByEmail</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/LoginVerificationCmdByEmail</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3560,7 +3204,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -3569,10 +3213,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               <elementProp name="Connection" elementType="Header">
                 <stringProp name="Header.name">Connection</stringProp>
                 <stringProp name="Header.value">keep-alive</stringProp>
-              </elementProp>
-              <elementProp name="Content-Type" elementType="Header">
-                <stringProp name="Header.name">Content-Type</stringProp>
-                <stringProp name="Header.value">multipart/form-data; boundary=--------------------------456768892492520885173811</stringProp>
               </elementProp>
               <elementProp name="Content-Length" elementType="Header">
                 <stringProp name="Header.name">Content-Length</stringProp>
@@ -3607,7 +3247,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- RegisterUserByEmail_Subsi" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- RegisterUserByEmail_Subsi" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3621,7 +3261,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="RegisterUserByEmail_Subsi" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="RegisterUserByEmail_HQ" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -3641,7 +3281,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/RegisterUserByEmail</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/RegisterUserByEmail</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3668,7 +3308,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -3739,7 +3379,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- LoginVerificationCmdByEmail_Subsi" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- LoginVerificationCmdByEmail_Subsi" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3753,7 +3393,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LoginVerificationCmdByEmail_Subsi" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="LoginVerificationCmdByEmail_HQ" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
@@ -3773,7 +3413,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/LoginVerificationCmdByEmail</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/LoginVerificationCmdByEmail</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3800,7 +3440,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -3847,7 +3487,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetHQPeriod1Details" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetHQPeriod1Details" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -3881,7 +3521,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/GetHQPeriod1Details</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/GetHQPeriod1Details</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -3912,7 +3552,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -3996,18 +3636,18 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------846318238214898823356926&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:$propertypropertyproperty{game_id},&quot;GameCompanyId&quot;:822}&#xd;
+{&quot;GameId&quot;:${__property(game_id)},&quot;GameCompanyId&quot;:822}&#xd;
 ----------------------------846318238214898823356926--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">cegame.iimb.ac.in</stringProp>
+          <stringProp name="HTTPSampler.domain">cegame-qa.iimb.ernet.in</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/GetHQPeriod1Details</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/GetHQPeriod1Details</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4038,7 +3678,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegame-qa.iimb.ernet.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -4061,7 +3701,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- performAction_HQ" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- performAction_HQ" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4095,7 +3735,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ManageProjectCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ManageProjectCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4126,7 +3766,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -4223,18 +3863,18 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------821082727487359952438710&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:0,&quot;ProjectId&quot;:99,&quot;Fund&quot;:12,&quot;COType&quot;:&quot;LowCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0,&quot;HqPitchQuality&quot;:&quot;AveragePQ&quot;,&quot;GameId&quot;:&quot;$propertypropertyproperty{game_id}&quot;,&quot;GameCompanyId&quot;:&quot;940&quot;,&quot;GameCompanyEntityId&quot;:4688}]}&#xd;
+{&quot;HqProjectsData&quot;:[{&quot;HqProjectId&quot;:0,&quot;ProjectId&quot;:99,&quot;Fund&quot;:12,&quot;COType&quot;:&quot;LowCO&quot;,&quot;PRType&quot;:&quot;QualiPR&quot;,&quot;IsDeleted&quot;:0,&quot;HqPitchQuality&quot;:&quot;AveragePQ&quot;,&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;GameCompanyId&quot;:&quot;940&quot;,&quot;GameCompanyEntityId&quot;:4688}]}&#xd;
 ----------------------------821082727487359952438710--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">cegame.iimb.ac.in</stringProp>
+          <stringProp name="HTTPSampler.domain">cegame-qa.iimb.ernet.in</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ManageProjectCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ManageProjectCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4265,7 +3905,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegame-qa.iimb.ernet.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -4288,7 +3928,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetSubsidiaryDetails" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetSubsidiaryDetails" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4322,7 +3962,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/GetSubsidiaryDetails</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/GetSubsidiaryDetails</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4353,7 +3993,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -4392,7 +4032,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- ManageSubsiProjectsCmd" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- ManageSubsiProjectsCmd" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4427,7 +4067,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ManageSubsiProjectsCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ManageSubsiProjectsCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4458,7 +4098,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -4497,7 +4137,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- stopPeriod1" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- stopPeriod1" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4531,7 +4171,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ManagePeriodEndStatus</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ManagePeriodEndStatus</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4573,7 +4213,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -4596,7 +4236,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- startPeriod2" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- startPeriod2" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4630,7 +4270,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ManageGameCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ManageGameCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4661,7 +4301,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -4700,7 +4340,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- HQfutureAction" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- HQfutureAction" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4734,7 +4374,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ManageProjectCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ManageProjectCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4765,7 +4405,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -4804,7 +4444,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- SubsifutureAction" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- SubsifutureAction" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4838,7 +4478,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ManageProjectCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ManageProjectCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4869,7 +4509,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -4908,7 +4548,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- stopPeriod2" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- stopPeriod2" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -4942,7 +4582,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/ManagePeriodEndStatus</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/ManagePeriodEndStatus</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -4973,7 +4613,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -5012,7 +4652,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- getTeamDashboardData" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- getTeamDashboardData" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -5046,7 +4686,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/getTeamDashboardData</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/getTeamDashboardData</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -5077,7 +4717,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -5116,7 +4756,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetGameScores" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- GetGameScores" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -5139,7 +4779,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------605710991656940391407264&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-&#xd;
 {&quot;GameId&quot;:&quot;${__property(game_id)}&quot;}&#xd;
 ----------------------------605710991656940391407264--&#xd;
 </stringProp>
@@ -5151,7 +4790,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/GetGameScores</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/GetGameScores</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -5182,7 +4821,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
               <elementProp name="Host" elementType="Header">
                 <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
+                <stringProp name="Header.value">cegameqa.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -5244,18 +4883,18 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------141432454263895521215941&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;$propertypropertyproperty{game_id}&quot;,&quot;Status&quot;:&quot;Cancelled&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;Status&quot;:&quot;Cancelled&quot;,&quot;OpFlag&quot;:&quot;Edit&quot;}&#xd;
 ----------------------------141432454263895521215941--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">cegame.iimb.ac.in</stringProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ceware/ManageGameCmd</stringProp>
+          <stringProp name="HTTPSampler.path">/cewarerepo/ManageGameCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -5283,10 +4922,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               <elementProp name="Postman-Token" elementType="Header">
                 <stringProp name="Header.name">Postman-Token</stringProp>
                 <stringProp name="Header.value">43270d92-70c7-4d0f-98d8-74be9138722d</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -5348,18 +4983,18 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">----------------------------141432454263895521215941&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;GameId&quot;:&quot;$propertypropertyproperty{game_id}&quot;,&quot;isDeleted&quot;:&quot;true&quot;}&#xd;
+{&quot;GameId&quot;:&quot;${__property(game_id)}&quot;,&quot;isDeleted&quot;:&quot;true&quot;}&#xd;
 ----------------------------141432454263895521215941--&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">cegame.iimb.ac.in</stringProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/DeleteGameCmd</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/DeleteGameCmd</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -5387,10 +5022,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               <elementProp name="Postman-Token" elementType="Header">
                 <stringProp name="Header.name">Postman-Token</stringProp>
                 <stringProp name="Header.value">43270d92-70c7-4d0f-98d8-74be9138722d</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>
@@ -5429,7 +5060,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- LogoutCommand" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group- LogoutCommand" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -5459,11 +5090,11 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">cegame.iimb.ac.in</stringProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">ceware/LogoutCommand</stringProp>
+          <stringProp name="HTTPSampler.path">cewarerepo/LogoutCommand</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -5502,10 +5133,6 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
               <elementProp name="Postman-Token" elementType="Header">
                 <stringProp name="Header.name">Postman-Token</stringProp>
                 <stringProp name="Header.value">ae0a15f8-3d24-4dc6-b556-7248bac930c2</stringProp>
-              </elementProp>
-              <elementProp name="Host" elementType="Header">
-                <stringProp name="Header.name">Host</stringProp>
-                <stringProp name="Header.value">cegame.iimb.ac.in</stringProp>
               </elementProp>
               <elementProp name="Accept-Encoding" elementType="Header">
                 <stringProp name="Header.name">Accept-Encoding</stringProp>

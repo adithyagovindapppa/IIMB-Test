@@ -161,9 +161,9 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CreateGame" enabled="true">
           <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
             <collectionProp name="HTTPFileArgs.files">
-              <elementProp name="C:\Users\common\Downloads\IIMB-CEGame-Test\players_dev.csv" elementType="HTTPFileArg">
+              <elementProp name="C:\Users\common\Downloads\IIMB-CEGame-Test\game_Sheet1.csv" elementType="HTTPFileArg">
                 <stringProp name="File.mimetype">text/csv</stringProp>
-                <stringProp name="File.path">C:\Users\common\Downloads\IIMB-CEGame-Test\players_dev.csv</stringProp>
+                <stringProp name="File.path">C:\Users\common\Downloads\IIMB-CEGame-Test\game_Sheet1.csv</stringProp>
                 <stringProp name="File.paramname">file</stringProp>
               </elementProp>
             </collectionProp>
@@ -172,7 +172,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
             <collectionProp name="Arguments.arguments">
               <elementProp name="Args" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;test&quot;,&quot;Venue&quot;:&quot;test&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-03-24&quot;,&quot;StartTime&quot;:&quot;15:30&quot;,&quot;EndTime&quot;:&quot;17:45&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}</stringProp>
+                <stringProp name="Argument.value">{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;test&quot;,&quot;Venue&quot;:&quot;test&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-03-29&quot;,&quot;StartTime&quot;:&quot;14:50&quot;,&quot;EndTime&quot;:&quot;17:45&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">Args</stringProp>

@@ -10,17 +10,17 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="token" elementType="Argument">
             <stringProp name="Argument.name">token</stringProp>
-            <stringProp name="Argument.value">35968214-65cb-43b0-86e3-86993e61fa7</stringProp>
+            <stringProp name="Argument.value">35968214-65cb-43b0-86e3-86993e61fa7d</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="hq_email" elementType="Argument">
             <stringProp name="Argument.name">hq_email</stringProp>
-            <stringProp name="Argument.value">iimbplayerHQ900</stringProp>
+            <stringProp name="Argument.value">iimbplayerHQ912</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="subsi_email" elementType="Argument">
             <stringProp name="Argument.name">subsi_email</stringProp>
-            <stringProp name="Argument.value">iimbplayerSUBSI900</stringProp>
+            <stringProp name="Argument.value">iimbplayerSUBSI912</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -34,7 +34,7 @@
         <stringProp name="connectionAge">5000</stringProp>
         <stringProp name="connectionProperties"></stringProp>
         <stringProp name="dataSource">mssql</stringProp>
-        <stringProp name="dbUrl">jdbc:sqlserver://CEGAMEQA:1433;databaseName=cegame_qa;integratedSecurity=false;encrypt=true;trustServerCertificate=true;</stringProp>
+        <stringProp name="dbUrl">jdbc:sqlserver://10.11.10.157\SQLEXPRESS:1433;databaseName=cegame_dev;integratedSecurity=false;encrypt=true;trustServerCertificate=true;</stringProp>
         <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
         <stringProp name="initQuery"></stringProp>
         <boolProp name="keepAlive">true</boolProp>
@@ -173,7 +173,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
                 <stringProp name="Argument.value">------WebKitFormBoundaryLdAjupqLfZOGrMfB&#xd;
 Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
 &#xd;
-{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;load test 96 t6&quot;,&quot;Venue&quot;:&quot;load test 96 t6&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-03-27&quot;,&quot;StartTime&quot;:&quot;17:30&quot;,&quot;EndTime&quot;:&quot;18:30&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}&#xd;
+{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;load test 96 t6&quot;,&quot;Venue&quot;:&quot;load test 96 t6&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-03-27&quot;,&quot;StartTime&quot;:&quot;18:00&quot;,&quot;EndTime&quot;:&quot;19:30&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}&#xd;
 ------WebKitFormBoundaryLdAjupqLfZOGrMfB--</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -355,9 +355,9 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CreateGame" enabled="true">
           <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
             <collectionProp name="HTTPFileArgs.files">
-              <elementProp name="C:\Users\Administrator\Documents\IIMB\players5.csv" elementType="HTTPFileArg">
+              <elementProp name="C:\Users\common\Downloads\IIMB-CEGame-Test\game5.csv" elementType="HTTPFileArg">
                 <stringProp name="File.mimetype">text/csv</stringProp>
-                <stringProp name="File.path">C:\Users\Administrator\Documents\IIMB\players5.csv</stringProp>
+                <stringProp name="File.path">C:\Users\common\Downloads\IIMB-CEGame-Test\game5.csv</stringProp>
                 <stringProp name="File.paramname">file</stringProp>
               </elementProp>
             </collectionProp>
@@ -366,7 +366,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
             <collectionProp name="Arguments.arguments">
               <elementProp name="Args" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;load test 96 auto t1&quot;,&quot;Venue&quot;:&quot;load test 96 t5&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-03-15&quot;,&quot;StartTime&quot;:&quot;11:25&quot;,&quot;EndTime&quot;:&quot;12:25&quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}</stringProp>
+                <stringProp name="Argument.value">{&quot;UserId&quot;:&quot;3377&quot;,&quot;GameId&quot;:0,&quot;Name&quot;:&quot;load test 96 auto t1&quot;,&quot;Venue&quot;:&quot;load test 96 t5&quot;,&quot;RuleConfig&quot;:&quot;{\&quot;Period1\&quot;:{\&quot;ReadBrief\&quot;:1,\&quot;Brainstorm\&quot;:1,\&quot;ProjSelection\&quot;:3},\&quot;Period2\&quot;:{\&quot;Time\&quot;:\&quot;5\&quot;}}&quot;,&quot;Date&quot;:&quot;2023-04-18&quot;,&quot;StartTime&quot;:&quot;11:13&quot;,&quot;EndTime&quot;:&quot;12:13 &quot;,&quot;CompaniesCount&quot;:6,&quot;ShareBrief&quot;:true,&quot;CompanyData&quot;:[{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;},{&quot;id&quot;:&quot;6&quot;}],&quot;OpFlag&quot;:&quot;Add&quot;,&quot;Status&quot;:&quot;Scheduled&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">Args</stringProp>
@@ -1104,7 +1104,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request_GameCompanyID_HQ" enabled="true">
           <stringProp name="dataSource">mssql</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select GameCompanyId from [cegame_qa].[dbo].[Players] where EmailId=&apos;${hq_email}+${number}@gmail.com&apos;</stringProp>
+          <stringProp name="query">select GameCompanyId from [cegame_dev].[dbo].[Players] where EmailId=&apos;${hq_email}+${number}@gmail.com&apos;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames">Col1</stringProp>
@@ -1202,9 +1202,9 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request_GameCompanyEntityID_HQ" enabled="true">
           <stringProp name="dataSource">mssql</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">SELECT gce.GameCompanyEntityId FROM [cegame_qa].[dbo].CompanyEntities ce JOIN [cegame_qa].[dbo].GameCompanyEntities gce ON ce.CompanyEntityId = gce.CompanyEntityId 
+          <stringProp name="query">SELECT gce.GameCompanyEntityId FROM [cegame_dev].[dbo].CompanyEntities ce JOIN [cegame_dev].[dbo].GameCompanyEntities gce ON ce.CompanyEntityId = gce.CompanyEntityId 
 WHERE gce.GameCompanyId = (SELECT gc.GameCompanyId 
-FROM [cegame_qa].[dbo].GameCompanies gc JOIN [cegame_qa].[dbo].Companies c ON gc.CompanyId = c.CompanyId AND gc.GameCompanyId = ${Col1_1}) 
+FROM [cegame_dev].[dbo].GameCompanies gc JOIN [cegame_dev].[dbo].Companies c ON gc.CompanyId = c.CompanyId AND gc.GameCompanyId = ${Col1_1}) 
 AND  ce.EntityType = &apos;Subsidiary&apos; AND ce.IsDeleted = 0  AND ce.CompanyEntityId=${companyEntityId};</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
@@ -1740,7 +1740,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request_GameCompanyID_SUBSI" enabled="true">
           <stringProp name="dataSource">mssql</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select GameCompanyId from [cegame_qa].[dbo].[Players] where EmailId=&apos;${subsi_email}+${number}@gmail.com&apos;</stringProp>
+          <stringProp name="query">select GameCompanyId from [cegame_dev].[dbo].[Players] where EmailId=&apos;${subsi_email}+${number}@gmail.com&apos;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames">Col1</stringProp>
@@ -1838,9 +1838,9 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request_GameCompanyEntityID_SUBSI" enabled="true">
           <stringProp name="dataSource">mssql</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">SELECT gce.GameCompanyEntityId FROM [cegame_qa].[dbo].CompanyEntities ce JOIN [cegame_qa].[dbo].GameCompanyEntities gce ON ce.CompanyEntityId = gce.CompanyEntityId 
+          <stringProp name="query">SELECT gce.GameCompanyEntityId FROM [cegame_dev].[dbo].CompanyEntities ce JOIN [cegame_dev].[dbo].GameCompanyEntities gce ON ce.CompanyEntityId = gce.CompanyEntityId 
 WHERE gce.GameCompanyId = (SELECT gc.GameCompanyId 
-FROM [cegame_qa].[dbo].GameCompanies gc JOIN [cegame_qa].[dbo].Companies c ON gc.CompanyId = c.CompanyId AND gc.GameCompanyId = ${Col1_1}) 
+FROM [cegame_dev].[dbo].GameCompanies gc JOIN [cegame_dev].[dbo].Companies c ON gc.CompanyId = c.CompanyId AND gc.GameCompanyId = ${Col1_1}) 
 AND  ce.EntityType = &apos;Subsidiary&apos; AND ce.IsDeleted = 0  AND ce.CompanyEntityId=${companyEntityId};</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
@@ -2415,7 +2415,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request_GameCompanyID_FA_HQ" enabled="true">
           <stringProp name="dataSource">mssql</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select GameCompanyId from [cegame_qa].[dbo].[Players] where EmailId=&apos;${hq_email}+${number}@gmail.com&apos;</stringProp>
+          <stringProp name="query">select GameCompanyId from [cegame_dev].[dbo].[Players] where EmailId=&apos;${hq_email}+${number}@gmail.com&apos;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames">Col1</stringProp>
@@ -2513,9 +2513,9 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request_GameCompanyEntityID_FA_HQ" enabled="true">
           <stringProp name="dataSource">mssql</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">SELECT gce.GameCompanyEntityId FROM [cegame_qa].[dbo].CompanyEntities ce JOIN [cegame_qa].[dbo].GameCompanyEntities gce ON ce.CompanyEntityId = gce.CompanyEntityId 
+          <stringProp name="query">SELECT gce.GameCompanyEntityId FROM [cegame_dev].[dbo].CompanyEntities ce JOIN [cegame_dev].[dbo].GameCompanyEntities gce ON ce.CompanyEntityId = gce.CompanyEntityId 
 WHERE gce.GameCompanyId = (SELECT gc.GameCompanyId 
-FROM [cegame_qa].[dbo].GameCompanies gc JOIN [cegame_qa].[dbo].Companies c ON gc.CompanyId = c.CompanyId AND gc.GameCompanyId = ${Col1_1}) 
+FROM [cegame_dev].[dbo].GameCompanies gc JOIN [cegame_dev].[dbo].Companies c ON gc.CompanyId = c.CompanyId AND gc.GameCompanyId = ${Col1_1}) 
 AND  ce.EntityType = &apos;Subsidiary&apos; AND ce.IsDeleted = 0  AND ce.CompanyEntityId=${companyEntityId};</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
@@ -2614,7 +2614,7 @@ AND  ce.EntityType = &apos;Subsidiary&apos; AND ce.IsDeleted = 0  AND ce.Company
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request_GameProjectID_FA_HQ" enabled="true">
           <stringProp name="dataSource">mssql</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select HqProjectId from [cegame_qa].[dbo].[HqProjects] where GameId=${__property(dynamic_game_id)} and GameCompanyId=${Col1_1} and GameCompanyEntityId=${Col2_1}</stringProp>
+          <stringProp name="query">select HqProjectId from [cegame_dev].[dbo].[HqProjects] where GameId=${__property(dynamic_game_id)} and GameCompanyId=${Col1_1} and GameCompanyEntityId=${Col2_1}</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames">Col3</stringProp>
@@ -3085,7 +3085,7 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request_GameCompanyID_FA_SUBSI" enabled="true">
           <stringProp name="dataSource">mssql</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select GameCompanyId from [cegame_qa].[dbo].[Players] where EmailId=&apos;${subsi_email}+${number}@gmail.com&apos;</stringProp>
+          <stringProp name="query">select GameCompanyId from [cegame_dev].[dbo].[Players] where EmailId=&apos;${subsi_email}+${number}@gmail.com&apos;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames">Col1</stringProp>
@@ -3183,9 +3183,9 @@ Content-Disposition: form-data; name=&quot;Args&quot;&#xd;
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request_GameCompanyEntityID_FA_SUBSI" enabled="true">
           <stringProp name="dataSource">mssql</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">SELECT gce.GameCompanyEntityId FROM [cegame_qa].[dbo].CompanyEntities ce JOIN [cegame_qa].[dbo].GameCompanyEntities gce ON ce.CompanyEntityId = gce.CompanyEntityId 
+          <stringProp name="query">SELECT gce.GameCompanyEntityId FROM [cegame_dev].[dbo].CompanyEntities ce JOIN [cegame_dev].[dbo].GameCompanyEntities gce ON ce.CompanyEntityId = gce.CompanyEntityId 
 WHERE gce.GameCompanyId = (SELECT gc.GameCompanyId 
-FROM [cegame_qa].[dbo].GameCompanies gc JOIN [cegame_qa].[dbo].Companies c ON gc.CompanyId = c.CompanyId AND gc.GameCompanyId = ${Col1_1}) 
+FROM [cegame_dev].[dbo].GameCompanies gc JOIN [cegame_dev].[dbo].Companies c ON gc.CompanyId = c.CompanyId AND gc.GameCompanyId = ${Col1_1}) 
 AND  ce.EntityType = &apos;Subsidiary&apos; AND ce.IsDeleted = 0  AND ce.CompanyEntityId=${companyEntityId};</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
@@ -3284,7 +3284,7 @@ AND  ce.EntityType = &apos;Subsidiary&apos; AND ce.IsDeleted = 0  AND ce.Company
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request_GameProjectID_FA_SUBSI" enabled="true">
           <stringProp name="dataSource">mssql</stringProp>
           <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="query">select HqProjectId from [cegame_qa].[dbo].[HqProjects] where GameId=${__property(dynamic_game_id)} and GameCompanyId=${Col1_1} and GameCompanyEntityId=${Col2_1}</stringProp>
+          <stringProp name="query">select HqProjectId from [cegame_dev].[dbo].[HqProjects] where GameId=${__property(dynamic_game_id)} and GameCompanyId=${Col1_1} and GameCompanyEntityId=${Col2_1}</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="variableNames">Col3</stringProp>
